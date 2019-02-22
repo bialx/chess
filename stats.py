@@ -2,10 +2,14 @@ from urllib.request import urlopen
 import requests
 import bs4 as BeautifulSoup
 
+############### Analyse games played on Lichess ###############
 
 # url = "https://lichess.org/@/Bialx/all"
 # url 15m : https://lichess.org/@/Bialx/search?page=1&clock.initMin=900&sort.field=d&sort.order=desc&_=1550832506578
 
+
+#This for loop rely on the url and the "cadence" you wanna analyse, need to modify the value of j and the url if you're looking
+#for someone else
 def main():
     dict_opening = {}
     for i in range(1,50):
@@ -19,12 +23,14 @@ def main():
 
 
 def add_opening(url, d):
+    """ Create a dictionary with key = opening, value = (nbr_win, nbr_match) """
     page = requests.get(url)
     soup = BeautifulSoup.BeautifulSoup(page.text, "html.parser")
     print(f"###### {url} ######")
     tag_opening = soup.findAll('div', attrs={"class":"opening"})
     tag_win = soup.findAll('div', attrs={"class":"result"})
 
+    #Working with infinite scroll, end condition to check if there is nothing more to scroll
     if tag_opening == []:
         print("no more game")
         return (d,1)
@@ -35,13 +41,19 @@ def add_opening(url, d):
                 win_status = 1
             elif ('class' in tag.attrs and tag['class'][0] == 'down'):
                 win_status = 0
+
+            #We just want the name of the core opening, neither the variation nor its classification C45 for example
             filtered_text = ((opening.text).split(":")[0])[3:]
             d[filtered_text] = add(d.get(filtered_text, (win_status, 1)), (win_status, 1))
         return (d,0)
 
+
+#Function to add 2tuples
 def add(xs,ys):
      return tuple(x + y for x, y in zip(xs, ys))
 
+
+#Function to create from a list a dictionary with the number of times the key appear in the list as a value
 def occurence(l):
     liste_occurence = []
     compte = {}.fromkeys(set(l),0)
