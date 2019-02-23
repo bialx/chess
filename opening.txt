@@ -1,5 +1,6 @@
+ Grünfeld Defense-- nombre win: 1--nombre match: 3
  Scotch Game-- nombre win: 18--nombre match: 22
- Italian Game-- nombre win: 0--nombre match: 8
+ Italian Game-- nombre win: 0.5--nombre match: 8
  Philidor Defense-- nombre win: 3--nombre match: 8
  King's Pawn Game-- nombre win: 3--nombre match: 5
  Indian Game-- nombre win: 4--nombre match: 7
@@ -11,14 +12,14 @@
  Van't Kruijs Opening-- nombre win: 0--nombre match: 2
  Petrov's Defense-- nombre win: 3--nombre match: 3
  Sicilian Defense-- nombre win: 18--nombre match: 30
- French Defense-- nombre win: 3--nombre match: 6
+ French Defense-- nombre win: 2.5--nombre match: 6
  Scandinavian Defense-- nombre win: 1--nombre match: 4
- Colle System-- nombre win: 2--nombre match: 3
+ Colle System-- nombre win: 2.5--nombre match: 3
  Bishop's Opening-- nombre win: 0--nombre match: 2
  Ponziani Opening-- nombre win: 2--nombre match: 2
  Nimzo-Indian Defense-- nombre win: 3--nombre match: 3
  English Opening-- nombre win: 3--nombre match: 4
- King's Knight Opening-- nombre win: 0--nombre match: 2
+ King's Knight Opening-- nombre win: 1.0--nombre match: 2
  Nimzowitsch Defense-- nombre win: 3--nombre match: 3
  Ruy Lopez-- nombre win: 3--nombre match: 3
  Queen's Gambit Declined-- nombre win: 1--nombre match: 3

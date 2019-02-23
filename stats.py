@@ -41,9 +41,12 @@ def add_opening(url, d):
                 win_status = 1
             elif ('class' in tag.attrs and tag['class'][0] == 'down'):
                 win_status = 0
+            elif ('class' not in tag.attrs and opening.text != ''):
+                win_status = 0.5
 
             #We just want the name of the core opening, neither the variation nor its classification C45 for example
             filtered_text = ((opening.text).split(":")[0])[3:]
+            print(filtered_text, tag.attrs)
             d[filtered_text] = add(d.get(filtered_text, (win_status, 1)), (win_status, 1))
         return (d,0)
 
