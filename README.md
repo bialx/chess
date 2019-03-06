@@ -13,7 +13,11 @@ You'll need to install the following module :
 
 
 $ pip install MechanicalSoup
-```
+
+
+In Ubuntu, Mint and Debian you can install Python 3 like this:
+
+    $ sudo apt-get install python3 python3-pip
 
 ```bash
 pip install beautifulsoup4
