@@ -9,19 +9,15 @@ Provide : opening/nbr_win/nbr_match in a text file
 Used with : bialx -> 15/2
 
 
+Requirements
+------------
+
 You'll need to install the following module :
 
 
-$ pip install MechanicalSoup
+    $ pip install MechanicalSoup
+    
+    $ pip install beautifulsoup4
+    
+    $ pipenv install requests
 
-
-In Ubuntu, Mint and Debian you can install Python 3 like this:
-
-    $ sudo apt-get install python3 python3-pip
-
-```bash
-pip install beautifulsoup4
-```
-```bash
-pipenv install requests
-```
