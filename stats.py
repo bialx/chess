@@ -7,6 +7,7 @@ import bs4 as BeautifulSoup
 # url = "https://lichess.org/@/Bialx/all"
 # url 15m : https://lichess.org/@/Bialx/search?page=1&clock.initMin=900&sort.field=d&sort.order=desc&_=1550832506578
 
+date = 
 
 #This for loop rely on the url and the "cadence" you wanna analyse, need to modify the value of j and the url if you're looking
 #for someone else
@@ -24,12 +25,15 @@ def main():
 
 def add_opening(url, d):
     """ Create a dictionary with key = opening, value = (nbr_win, nbr_match) """
+    global date
     page = requests.get(url)
     soup = BeautifulSoup.BeautifulSoup(page.text, "html.parser")
     print(f"###### {url} ######")
     tag_opening = soup.findAll('div', attrs={"class":"opening"})
     tag_win = soup.findAll('div', attrs={"class":"result"})
-
+    tag_date = soup.findAll('time', attrs={"datetime"})
+    for elt in tag_date:
+        print(elt)
     #Working with infinite scroll, end condition to check if there is nothing more to scroll
     if tag_opening == []:
         print("no more game")
