@@ -32,8 +32,8 @@ You'll need to install the following modules :
 WIP
 ------------
 
-automize the process of the infinite scroll to avoid having to get by hand the link. We currently have to analyse the requests made when we are scrolling. In fact lichess does a POST request to create different html pages as long as we are scrolling.
+Automize the process of the infinite scroll to avoid having to get by hand the link. We currently have to analyse the requests made when we are scrolling. In fact lichess does a POST request to create different html pages as long as we are scrolling.
 
-submit via command-line options the player we choose, clock-timer, how many month to review.
+Submit via command-line options the player we choose, clock-timer, how many month to review.
 
-data analysis on the different game/openings in order to get the most efficient opening, which lines are good/bad.  
+Data analysis on the different game/openings in order to get the most efficient opening, which lines are good/bad.  
