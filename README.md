@@ -11,8 +11,8 @@ Used with : bialx -> 15/2
 
 You'll need to install the following module :
 
-```bash
-pip install MechanicalSoup
+
+$ pip install MechanicalSoup
 ```
 
 ```bash
