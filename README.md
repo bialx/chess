@@ -13,3 +13,9 @@ You'll need to install the following module :
 
 
 pip install MechanicalSoup
+
+
+pip install beautifulsoup4
+
+
+pipenv install requests

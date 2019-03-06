@@ -2,9 +2,6 @@ from urllib.request import urlopen
 import requests
 import bs4 as BeautifulSoup
 import datetime
-import mechanicalsoup
-
-
 ############### Analyse games played on Lichess ###############
 
 # url = "https://lichess.org/@/Bialx/all"
@@ -17,7 +14,7 @@ current_date = datetime.datetime.now()
 #for someone else
 def main():
     dict_opening = {}
-    for i in range(1,1000):
+    for i in range(1,50):
         j = i+26
         link = f"https://lichess.org/@/Bialx/search?page={i}&clock.initMin=900&sort.field=d&sort.order=desc&_=15508329043{j}"
         dict_opening, end  = add_opening(link, dict_opening)
@@ -47,8 +44,8 @@ def add_opening(url, d):
             tag_date = date.time
             date_game = tag_date['datetime']
             month = ((date_game.split("-")[1]).split("-")[0]).replace("0","")
+
             #if game are too old
-            print(abs(int(month) - current_date.month), limit_date)
             if abs(int(month) - current_date.month) > limit_date:
                 break
             if ('class' in tag.attrs and tag['class'][0] == 'up'):
