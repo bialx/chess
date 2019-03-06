@@ -15,7 +15,9 @@ You'll need to install the following module :
 pip install MechanicalSoup
 ```
 
+```bash
 pip install beautifulsoup4
-
-
+```
+```bash
 pipenv install requests
+```
