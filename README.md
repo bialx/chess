@@ -1,18 +1,26 @@
 # chess
 
-Tool to analyse game played on lichess
+Tool to analyse game played on lichess. Maleability isnt great, i have to modify the url used in my code if i want a different player, havent automized the process yet.
 
-Maleability isnt great, i have to modify the url used in my code if i want a different player, havent automized the process yet.
+Parameters
+------------
 
-Provide : opening/nbr_win/nbr_match in a text file
+user : bialx
 
-Used with : bialx -> 15/2
+clock timer : 15+2
+
+how many months to consider : 2
+
+
+Provide
+------------
+opening/nbr_win/nbr_match in a text file -> opening.txt
 
 
 Requirements
 ------------
 
-You'll need to install the following module :
+You'll need to install the following modules :
 
 
     $ pip install MechanicalSoup
@@ -21,3 +29,11 @@ You'll need to install the following module :
     
     $ pipenv install requests
 
+WIP
+------------
+
+automize the process of the infinite scroll to avoid having to get by hand the link. We currently have to analyse the requests made when we are scrolling. In fact lichess does a POST request to create different html pages as long as we are scrolling.
+
+submit via command-line options the player we choose, clock-timer, how many month to review.
+
+data analysis on the different game/openings in order to get the most efficient opening, which lines are good/bad.  
