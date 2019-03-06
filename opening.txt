@@ -1,28 +1,17 @@
- Grünfeld Defense-- nombre win: 1--nombre match: 3
- Scotch Game-- nombre win: 18--nombre match: 22
- Italian Game-- nombre win: 0.5--nombre match: 8
- Philidor Defense-- nombre win: 3--nombre match: 8
- King's Pawn Game-- nombre win: 3--nombre match: 5
- Indian Game-- nombre win: 4--nombre match: 7
- Caro-Kann Defense-- nombre win: 2--nombre match: 4
- East Indian Defense-- nombre win: 0--nombre match: 2
- Danish Gambit-- nombre win: 0--nombre match: 2
- Owen Defense-- nombre win: 2--nombre match: 2
- Four Knights Game-- nombre win: 2--nombre match: 2
- Van't Kruijs Opening-- nombre win: 0--nombre match: 2
- Petrov's Defense-- nombre win: 3--nombre match: 3
- Sicilian Defense-- nombre win: 18--nombre match: 30
- French Defense-- nombre win: 2.5--nombre match: 6
- Scandinavian Defense-- nombre win: 1--nombre match: 4
- Colle System-- nombre win: 2.5--nombre match: 3
- Bishop's Opening-- nombre win: 0--nombre match: 2
- Ponziani Opening-- nombre win: 2--nombre match: 2
- Nimzo-Indian Defense-- nombre win: 3--nombre match: 3
- English Opening-- nombre win: 3--nombre match: 4
- King's Knight Opening-- nombre win: 1.0--nombre match: 2
- Nimzowitsch Defense-- nombre win: 3--nombre match: 3
- Ruy Lopez-- nombre win: 3--nombre match: 3
- Queen's Gambit Declined-- nombre win: 1--nombre match: 3
- Modern Defense-- nombre win: 1--nombre match: 3
+ Scotch Game-- nombre win: 8--nombre match: 12
+ Sicilian Defense-- nombre win: 13--nombre match: 24
+ Nimzo-Indian Defense-- nombre win: 2--nombre match: 2
+ Queen's Gambit Declined-- nombre win: 2--nombre match: 2
+ Philidor Defense-- nombre win: 1--nombre match: 4
+ Indian Game-- nombre win: 4--nombre match: 6
+ French Defense-- nombre win: 2--nombre match: 3
+ English Opening-- nombre win: 2--nombre match: 3
  Russian Game-- nombre win: 2--nombre match: 2
  Alekhine Defense-- nombre win: 2--nombre match: 2
+ Ruy Lopez-- nombre win: 2--nombre match: 2
+ Nimzowitsch Defense-- nombre win: 2--nombre match: 2
+ Petrov's Defense-- nombre win: 2--nombre match: 2
+ Colle System-- nombre win: 1.0--nombre match: 2
+ Caro-Kann Defense-- nombre win: 0--nombre match: 2
+ Scandinavian Defense-- nombre win: 2--nombre match: 2
+ Modern Defense-- nombre win: 2--nombre match: 2

@@ -1,13 +1,14 @@
 from urllib.request import urlopen
 import requests
 import bs4 as BeautifulSoup
-
+import datetime
 ############### Analyse games played on Lichess ###############
 
 # url = "https://lichess.org/@/Bialx/all"
 # url 15m : https://lichess.org/@/Bialx/search?page=1&clock.initMin=900&sort.field=d&sort.order=desc&_=1550832506578
 
-date = 
+limit_date = 2
+current_date = datetime.datetime.now()
 
 #This for loop rely on the url and the "cadence" you wanna analyse, need to modify the value of j and the url if you're looking
 #for someone else
@@ -25,22 +26,28 @@ def main():
 
 def add_opening(url, d):
     """ Create a dictionary with key = opening, value = (nbr_win, nbr_match) """
-    global date
+    global limit_date, current_date
     page = requests.get(url)
     soup = BeautifulSoup.BeautifulSoup(page.text, "html.parser")
     print(f"###### {url} ######")
     tag_opening = soup.findAll('div', attrs={"class":"opening"})
     tag_win = soup.findAll('div', attrs={"class":"result"})
-    tag_date = soup.findAll('time', attrs={"datetime"})
-    for elt in tag_date:
-        print(elt)
+    tag_header = soup.findAll('div', attrs={"class":"header"})
+
     #Working with infinite scroll, end condition to check if there is nothing more to scroll
     if tag_opening == []:
         print("no more game")
         return (d,1)
     else:
-        for opening, win in zip(tag_opening, tag_win):
+        for opening, win, date in zip(tag_opening, tag_win, tag_header):
             tag = win.span
+            tag_date = date.time
+            date_game = tag_date['datetime']
+            month = ((date_game.split("-")[1]).split("-")[0]).replace("0","")
+            #if game are too old
+            print(abs(int(month) - current_date.month), limit_date)
+            if abs(int(month) - current_date.month) > limit_date:
+                break
             if ('class' in tag.attrs and tag['class'][0] == 'up'):
                 win_status = 1
             elif ('class' in tag.attrs and tag['class'][0] == 'down'):
@@ -50,10 +57,11 @@ def add_opening(url, d):
 
             #We just want the name of the core opening, neither the variation nor its classification C45 for example
             filtered_text = ((opening.text).split(":")[0])[3:]
-            print(filtered_text, tag.attrs)
+            # print(filtered_text, tag.attrs)
             d[filtered_text] = add(d.get(filtered_text, (win_status, 1)), (win_status, 1))
         return (d,0)
 
+#2018-12-08T21:26:44.384Z
 
 #Function to add 2tuples
 def add(xs,ys):
