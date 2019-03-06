@@ -61,6 +61,7 @@ def add(xs,ys):
 
 
 #Function to create from a list a dictionary with the number of times the key appear in the list as a value
+#Here we rather return a list instead of a dictionnary
 def occurence(l):
     liste_occurence = []
     compte = {}.fromkeys(set(l),0)
