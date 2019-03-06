@@ -2,6 +2,9 @@ from urllib.request import urlopen
 import requests
 import bs4 as BeautifulSoup
 import datetime
+import mechanicalsoup
+
+
 ############### Analyse games played on Lichess ###############
 
 # url = "https://lichess.org/@/Bialx/all"
@@ -14,7 +17,7 @@ current_date = datetime.datetime.now()
 #for someone else
 def main():
     dict_opening = {}
-    for i in range(1,50):
+    for i in range(1,1000):
         j = i+26
         link = f"https://lichess.org/@/Bialx/search?page={i}&clock.initMin=900&sort.field=d&sort.order=desc&_=15508329043{j}"
         dict_opening, end  = add_opening(link, dict_opening)
