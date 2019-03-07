@@ -13,18 +13,18 @@ current_date = datetime.datetime.now()
 #This for loop rely on the url and the "cadence" you wanna analyse, need to modify the value of j and the url if you're looking
 #for someone else
 def main():
-    dict_opening = {}
+    dict_opening_partial = {}
+    dict_opening_full = {}
     for i in range(1,50):
         j = i+26
         link = f"https://lichess.org/@/Bialx/search?page={i}&clock.initMin=900&sort.field=d&sort.order=desc&_=15508329043{j}"
-        dict_opening, end  = add_opening(link, dict_opening)
+        dict_opening_partial, dict_opening_full, end  = add_opening(link, dict_opening_partial,  dict_opening_full)
         if end == 1:
             break
-    print(dict_opening)
-    return dict_opening
+    return dict_opening_partial, dict_opening_full
 
 
-def add_opening(url, d):
+def add_opening(url, d_filtered, d_full):
     """ Create a dictionary with key = opening, value = (nbr_win, nbr_match) """
     global limit_date, current_date
     page = requests.get(url)
@@ -58,10 +58,12 @@ def add_opening(url, d):
             #We just want the name of the core opening, neither the variation nor its classification C45 for example
             filtered_text = ((opening.text).split(":")[0])[3:]
             # print(filtered_text, tag.attrs)
-            d[filtered_text] = add(d.get(filtered_text, (win_status, 1)), (win_status, 1))
-        return (d,0)
+            d_filtered[filtered_text] = add(d_filtered.get(filtered_text, (win_status, 1)), (win_status, 1))
+            
+            #full opening
+            d_full[opening.text] = add(d_full.get(opening.text, (win_status, 1)), (win_status, 1))
+        return (d_filtered, d_full, 0)
 
-#2018-12-08T21:26:44.384Z
 
 #Function to add 2tuples
 def add(xs,ys):
