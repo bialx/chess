@@ -7,7 +7,7 @@ import datetime
 # url = "https://lichess.org/@/Bialx/all"
 # url 15m : https://lichess.org/@/Bialx/search?page=1&clock.initMin=900&sort.field=d&sort.order=desc&_=1550832506578
 
-limit_date = 2
+limit_date = 12
 current_date = datetime.datetime.now()
 
 #This for loop rely on the url and the "cadence" you wanna analyse, need to modify the value of j and the url if you're looking
@@ -82,5 +82,17 @@ def occurence(l):
     return liste_occurence
 
 def display_info_openings(dict):
-    for key, value in dict:
-        return 0
+    #most played opening
+    k = list(dict.keys())
+    v = list(dict.values())
+    max_value_games = max(v, key=lambda x: x[1]) #get the max value -> nbr_match of the among the tuples (nbr_win, nbr_match)
+    max_value_ratio = max(v, key=lambda x: x[0]/x[1] if x[1]>5 else -1)
+    min_value_ratio = min(v, key=lambda x: x[0]/x[1] if x[1]>5 else 1)
+    opening_most_played = k[v.index(max_value_games)]
+    opening_best_ratio = k[v.index(max_value_ratio)]
+    opening_worst_ratio = k[v.index(min_value_ratio)]
+    ratio_max = (max_value_ratio[0]/max_value_ratio[1])*100
+    ratio_min = (min_value_ratio[0]/min_value_ratio[1])*100
+    print(f"Most played opening is : {opening_most_played}\nIt was played {max_value_games[1]} times with {max_value_games[0]} games won")
+    print(f"#########\nIt's best opening is : {opening_best_ratio}\nWith a win ratio of {ratio_max}% over {max_value_ratio[1]} games")
+    print(f"#########\nIt's worst opening is : {opening_worst_ratio}\nWith a win ratio of {ratio_min}% over {min_value_ratio[1]} games")
