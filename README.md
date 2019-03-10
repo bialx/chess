@@ -9,12 +9,12 @@ user : bialx
 
 clock timer : 15+2
 
-how many months to consider : 2
+how many months to consider : 12
 
 
 Provide
 ------------
-opening/nbr_win/nbr_match in a text file -> opening.txt
+opening/nbr_win/nbr_match in a text file -> /output/opening.txt
 
 
 Requirements
