@@ -1,0 +1,31 @@
+ Italian Game-- nombre win: 3.5--nombre match: 10
+ King's Gambit Accepted, Traditional Variation-- nombre win: 2--nombre match: 2
+ Scandinavian Defense-- nombre win: 0--nombre match: 4
+ Indian Game-- nombre win: 4--nombre match: 6
+ Ruy Lopez-- nombre win: 4--nombre match: 7
+ Sicilian Defense-- nombre win: 14--nombre match: 21
+ King's Pawn-- nombre win: 2--nombre match: 2
+ Nimzowitsch Defense-- nombre win: 2--nombre match: 4
+ Scotch Game-- nombre win: 15--nombre match: 18
+ French Defense-- nombre win: 4.5--nombre match: 7
+ Caro-Kann Defense-- nombre win: 1--nombre match: 4
+ Danish Gambit Declined, Sorensen Defense-- nombre win: 0--nombre match: 2
+ Grünfeld Defense-- nombre win: 1--nombre match: 3
+ Philidor Defense-- nombre win: 2--nombre match: 6
+ King's Pawn Game-- nombre win: 3--nombre match: 5
+ East Indian Defense-- nombre win: 0--nombre match: 2
+ Danish Gambit-- nombre win: 0--nombre match: 2
+ Owen Defense-- nombre win: 2--nombre match: 2
+ Four Knights Game-- nombre win: 2--nombre match: 2
+ Van't Kruijs Opening-- nombre win: 0--nombre match: 2
+ Petrov's Defense-- nombre win: 2--nombre match: 2
+ Colle System-- nombre win: 2--nombre match: 2
+ Bishop's Opening-- nombre win: 0--nombre match: 2
+ Ponziani Opening-- nombre win: 2--nombre match: 2
+ Nimzo-Indian Defense-- nombre win: 3--nombre match: 3
+ English Opening-- nombre win: 3--nombre match: 3
+ King's Knight Opening-- nombre win: 1.0--nombre match: 2
+ Queen's Gambit Declined-- nombre win: 1--nombre match: 3
+ Modern Defense-- nombre win: 0--nombre match: 2
+ Russian Game-- nombre win: 2--nombre match: 2
+ Alekhine Defense-- nombre win: 2--nombre match: 2
