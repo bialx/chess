@@ -29,14 +29,14 @@ def add_opening(url, d_filtered, d_full):
     global limit_date, current_date
     page = requests.get(url)
     soup = BeautifulSoup.BeautifulSoup(page.text, "html.parser")
-    print(f"###### {url} ######")
+    # print(f"###### {url} ######")
     tag_opening = soup.findAll('div', attrs={"class":"opening"})
     tag_win = soup.findAll('div', attrs={"class":"result"})
     tag_header = soup.findAll('div', attrs={"class":"header"})
 
     #Working with infinite scroll, end condition to check if there is nothing more to scroll
     if tag_opening == []:
-        print("no more game")
+        # print("no more game")
         return (d_filtered,d_full,1)
     else:
         for opening, win, date in zip(tag_opening, tag_win, tag_header):
