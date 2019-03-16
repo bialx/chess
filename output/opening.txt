@@ -1,31 +1,46 @@
- Italian Game-- nombre win: 3.5--nombre match: 10
- King's Gambit Accepted, Traditional Variation-- nombre win: 2--nombre match: 2
- Scandinavian Defense-- nombre win: 1--nombre match: 5
- Indian Game-- nombre win: 7--nombre match: 9
- Ruy Lopez-- nombre win: 4--nombre match: 7
- Sicilian Defense-- nombre win: 19--nombre match: 32
- King's Pawn-- nombre win: 2--nombre match: 2
- Nimzowitsch Defense-- nombre win: 2--nombre match: 4
- Scotch Game-- nombre win: 20--nombre match: 24
- French Defense-- nombre win: 4.5--nombre match: 8
- Caro-Kann Defense-- nombre win: 1--nombre match: 5
- Danish Gambit Declined, Sorensen Defense-- nombre win: 0--nombre match: 2
- Grünfeld Defense-- nombre win: 1--nombre match: 3
- Philidor Defense-- nombre win: 3--nombre match: 8
- King's Pawn Game-- nombre win: 3--nombre match: 5
- East Indian Defense-- nombre win: 0--nombre match: 2
- Danish Gambit-- nombre win: 0--nombre match: 2
- Owen Defense-- nombre win: 2--nombre match: 2
- Four Knights Game-- nombre win: 2--nombre match: 2
- Van't Kruijs Opening-- nombre win: 0--nombre match: 2
- Petrov's Defense-- nombre win: 3--nombre match: 3
- Colle System-- nombre win: 2.5--nombre match: 3
- Bishop's Opening-- nombre win: 0--nombre match: 2
- Ponziani Opening-- nombre win: 2--nombre match: 2
- Nimzo-Indian Defense-- nombre win: 3--nombre match: 3
- English Opening-- nombre win: 3--nombre match: 4
- King's Knight Opening-- nombre win: 1.0--nombre match: 2
- Queen's Gambit Declined-- nombre win: 1--nombre match: 3
- Modern Defense-- nombre win: 1--nombre match: 3
- Russian Game-- nombre win: 2--nombre match: 2
- Alekhine Defense-- nombre win: 2--nombre match: 2
+ Nimzo-Larsen Attack-- nombre win: 5--nombre match: 11
+ Scotch Game-- nombre win: 3.5--nombre match: 9
+ Giuoco Piano-- nombre win: 7--nombre match: 11
+ Ruy Lopez-- nombre win: 9--nombre match: 14
+ Queen's Gambit Refused-- nombre win: 2.5--nombre match: 4
+ Three Knights Opening-- nombre win: 1--nombre match: 6
+ Queen's Pawn Game-- nombre win: 6--nombre match: 9
+ Owen Defense-- nombre win: 1--nombre match: 4
+ Modern Defense-- nombre win: 2--nombre match: 2
+ Zukertort Opening-- nombre win: 5--nombre match: 5
+ Indian Game-- nombre win: 0--nombre match: 2
+ English Opening-- nombre win: 1--nombre match: 5
+ Italian Game-- nombre win: 10.5--nombre match: 26
+ Robatsch (Modern) Defense-- nombre win: 2--nombre match: 2
+ Pirc Defense-- nombre win: 2--nombre match: 4
+ Bishop's Opening-- nombre win: 23.5--nombre match: 40
+ French Defense-- nombre win: 5--nombre match: 8
+ Sicilian Defense-- nombre win: 5--nombre match: 14
+ Danish Gambit-- nombre win: 2--nombre match: 2
+ Scandinavian Defense-- nombre win: 0--nombre match: 4
+ Richter-Veresov Attack-- nombre win: 0--nombre match: 2
+ Hungarian Opening-- nombre win: 3--nombre match: 3
+ Caro-Kann Defense-- nombre win: 0--nombre match: 4
+ Nimzowitsch Defense-- nombre win: 2--nombre match: 3
+ King's Gambit Accepted, Fischer Defense-- nombre win: 0--nombre match: 2
+ Center Game-- nombre win: 2--nombre match: 4
+ Russian Game-- nombre win: 3--nombre match: 3
+ St. George Defense-- nombre win: 3--nombre match: 3
+ Polish Opening-- nombre win: 2--nombre match: 2
+ Philidor Defense-- nombre win: 1--nombre match: 4
+ Four Knights Game-- nombre win: 1.0--nombre match: 2
+ Grob Opening-- nombre win: 0--nombre match: 2
+ King's Pawn Game-- nombre win: 2--nombre match: 6
+ Dutch Defense-- nombre win: 1--nombre match: 3
+ King's Knight Opening-- nombre win: 2--nombre match: 2
+ Queen's Gambit Accepted-- nombre win: 0--nombre match: 2
+ Ponziani Opening-- nombre win: 1--nombre match: 3
+ Saragossa Opening-- nombre win: 0--nombre match: 2
+ Mikenas Defense-- nombre win: 0--nombre match: 2
+ Van't Kruijs Opening-- nombre win: 2--nombre match: 2
+ Vienna Game-- nombre win: 2--nombre match: 2
+ Blackmar-Diemer Gambit-- nombre win: 0--nombre match: 2
+ Englund Gambit Complex-- nombre win: 2--nombre match: 2
+ Duras Gambit-- nombre win: 2--nombre match: 2
+ King's Gambit Accepted, Schallopp Defense-- nombre win: 0--nombre match: 2
+ Horwitz Defense-- nombre win: 1--nombre match: 3

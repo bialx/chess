@@ -6,7 +6,10 @@ import datetime
 
 # url = "https://lichess.org/@/Bialx/all"
 # url 15m : https://lichess.org/@/Bialx/search?page=1&clock.initMin=900&sort.field=d&sort.order=desc&_=1550832506578
-
+        #
+        # j = i+26
+        # link = f"https://lichess.org/@/Bialx/search?page={i}&clock.initMin=900&sort.field=d&sort.order=desc&_=15508329043{j}"
+# "https://lichess.org/@/User3546/search?page=6&clock.initMin=600&sort.field=d&sort.order=desc&_=1552756202890"
 limit_date = 12
 current_date = datetime.datetime.now()
 
@@ -17,8 +20,8 @@ def build_dict():
     dict_opening_full = {}
     print("Processing url /*")
     for i in range(1,50):
-        j = i+26
-        link = f"https://lichess.org/@/Bialx/search?page={i}&clock.initMin=900&sort.field=d&sort.order=desc&_=15508329043{j}"
+        j = i+84
+        link = f"https://lichess.org/@/User3546/search?page={i}&clock.initMin=600&sort.field=d&sort.order=desc&_=15527562028{j}"
         dict_opening_partial, dict_opening_full, end  = add_opening(link, dict_opening_partial,  dict_opening_full)
         if end == 1:
             break
