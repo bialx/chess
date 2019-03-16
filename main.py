@@ -1,5 +1,5 @@
-import lib.opening as opening
-import lib.get_url as get_url
+import src.opening as opening
+import src.get_url as get_url
 import sys, os
 
 # Main definition - constants
@@ -86,7 +86,7 @@ menu_actions = {
 # =======================
 
 if __name__ == '__main__':
-    menu.main_menu()
+    main_menu()
     opening_partial, opening_full = opening.build_dict()
 
     # with open("output/opening.txt", "w") as f:
