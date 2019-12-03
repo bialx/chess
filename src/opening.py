@@ -4,12 +4,6 @@ import bs4 as BeautifulSoup
 import datetime
 ############### Analyse games played on Lichess ###############
 
-# url = "https://lichess.org/@/Bialx/all"
-# url 15m : https://lichess.org/@/Bialx/search?page=1&clock.initMin=900&sort.field=d&sort.order=desc&_=1550832506578
-        #
-        # j = i+26
-        # link = f"https://lichess.org/@/Bialx/search?page={i}&clock.initMin=900&sort.field=d&sort.order=desc&_=15508329043{j}"
-# "https://lichess.org/@/User3546/search?page=6&clock.initMin=600&sort.field=d&sort.ordehttps://lichess.org/@/User3546/search?page={i}&clock.initMin=600&sort.field=d&sort.order=desc&_=15527562028{j}"r=desc&_=1552756202890"
 limit_date = 12
 current_date = datetime.datetime.now()
 
@@ -17,10 +11,11 @@ current_date = datetime.datetime.now()
 #for someone else
 #https://lichess.org/@/Bialx/search?page=j&perf=2&sort.field=d&sort.order=desc&_=1575394082{j}
 def build_dict():
+
     dict_opening_partial = {}
     dict_opening_full = {}
     print("Processing url /*")
-    for i in range(1,50):
+    for i in range(1,2):
         j = i+101
         link = f"https://lichess.org/@/Bialx/search?page={i}&perf=2&sort.field=d&sort.order=desc&_=1575394082{j}"
         dict_opening_partial, dict_opening_full, end  = add_opening(link, dict_opening_partial,  dict_opening_full)
@@ -38,8 +33,11 @@ def add_opening(url, d_filtered, d_full):
     soup = BeautifulSoup.BeautifulSoup(page.text, "html.parser")
     print(f"###### {url} ######")
     tag_opening = soup.findAll('div', attrs={"class":"opening"})
+    print(f"tag opening = {tag_opening}\n")
     tag_win = soup.findAll('div', attrs={"class":"result"})
+    print(f"tag win = {tag_win}\n")
     tag_header = soup.findAll('div', attrs={"class":"header"})
+    print(f"tag header = {tag_header}\n")
 
     #Working with infinite scroll, end condition to check if there is nothing more to scroll
     if tag_opening == []:
@@ -47,29 +45,33 @@ def add_opening(url, d_filtered, d_full):
         return (d_filtered,d_full,1)
     else:
         for opening, win, date in zip(tag_opening, tag_win, tag_header):
+            print(f"\n{opening}\n {win}\n {date}\n")
             tag = win.span
             tag_date = date.time
             date_game = tag_date['datetime']
             month = ((date_game.split("-")[1]).split("-")[0]).replace("0","")
-            win_status = 0
+
+            print(f"attribut win = {tag.attrs}")
             #if game are too old
             if abs(int(month) - current_date.month) > limit_date:
-
                 break
-            if ('class' in tag.attrs and tag['class'][0] == 'up'):
+            if ('class' in tag.attrs and tag['class'][0] == 'win'):
                 win_status = 1
-            elif ('class' in tag.attrs and tag['class'][0] == 'down'):
+            elif ('class' in tag.attrs and tag['class'][0] == 'loss'):
                 win_status = 0
             elif ('class' not in tag.attrs and opening.text != ''):
                 win_status = 0.5
 
             #We just want the name of the core opening, neither the variation nor its classification C45 for example
             filtered_text = ((opening.text).split(":")[0])[3:]
+            full_text = ((opening.text).split(".")[0])
+            print(f"FULL TEXT {full_text}\n")
+#            print(f"OPENING TEXT = {opening.text} // FILTERED = {test}\n")
             # print(filtered_text, tag.attrs)
             d_filtered[filtered_text] = add(d_filtered.get(filtered_text, (win_status, 1)), (win_status, 1))
 
             #full opening
-            d_full[opening.text] = add(d_full.get(opening.text, (win_status, 1)), (win_status, 1))
+            d_full[opening.text] = add(d_full.get(full_text, (win_status, 1)), (win_status, 1))
         return (d_filtered, d_full, 0)
 
 
