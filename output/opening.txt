@@ -1,46 +1,166 @@
- Nimzo-Larsen Attack-- nombre win: 5--nombre match: 11
- Scotch Game-- nombre win: 3.5--nombre match: 9
- Giuoco Piano-- nombre win: 7--nombre match: 11
- Ruy Lopez-- nombre win: 9--nombre match: 14
- Queen's Gambit Refused-- nombre win: 2.5--nombre match: 4
- Three Knights Opening-- nombre win: 1--nombre match: 6
- Queen's Pawn Game-- nombre win: 6--nombre match: 9
- Owen Defense-- nombre win: 1--nombre match: 4
- Modern Defense-- nombre win: 2--nombre match: 2
- Zukertort Opening-- nombre win: 5--nombre match: 5
- Indian Game-- nombre win: 0--nombre match: 2
- English Opening-- nombre win: 1--nombre match: 5
- Italian Game-- nombre win: 10.5--nombre match: 26
- Robatsch (Modern) Defense-- nombre win: 2--nombre match: 2
- Pirc Defense-- nombre win: 2--nombre match: 4
- Bishop's Opening-- nombre win: 23.5--nombre match: 40
- French Defense-- nombre win: 5--nombre match: 8
- Sicilian Defense-- nombre win: 5--nombre match: 14
- Danish Gambit-- nombre win: 2--nombre match: 2
- Scandinavian Defense-- nombre win: 0--nombre match: 4
- Richter-Veresov Attack-- nombre win: 0--nombre match: 2
- Hungarian Opening-- nombre win: 3--nombre match: 3
- Caro-Kann Defense-- nombre win: 0--nombre match: 4
- Nimzowitsch Defense-- nombre win: 2--nombre match: 3
- King's Gambit Accepted, Fischer Defense-- nombre win: 0--nombre match: 2
- Center Game-- nombre win: 2--nombre match: 4
- Russian Game-- nombre win: 3--nombre match: 3
- St. George Defense-- nombre win: 3--nombre match: 3
- Polish Opening-- nombre win: 2--nombre match: 2
- Philidor Defense-- nombre win: 1--nombre match: 4
- Four Knights Game-- nombre win: 1.0--nombre match: 2
- Grob Opening-- nombre win: 0--nombre match: 2
- King's Pawn Game-- nombre win: 2--nombre match: 6
- Dutch Defense-- nombre win: 1--nombre match: 3
- King's Knight Opening-- nombre win: 2--nombre match: 2
- Queen's Gambit Accepted-- nombre win: 0--nombre match: 2
- Ponziani Opening-- nombre win: 1--nombre match: 3
- Saragossa Opening-- nombre win: 0--nombre match: 2
- Mikenas Defense-- nombre win: 0--nombre match: 2
- Van't Kruijs Opening-- nombre win: 2--nombre match: 2
- Vienna Game-- nombre win: 2--nombre match: 2
- Blackmar-Diemer Gambit-- nombre win: 0--nombre match: 2
- Englund Gambit Complex-- nombre win: 2--nombre match: 2
- Duras Gambit-- nombre win: 2--nombre match: 2
- King's Gambit Accepted, Schallopp Defense-- nombre win: 0--nombre match: 2
- Horwitz Defense-- nombre win: 1--nombre match: 3
+ Scotch Game-- nombre win: 0--nombre match: 42
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 39 moves -- nombre win: 0--nombre match: 3
+ Italian Game-- nombre win: 0.5--nombre match: 33
+ Indian Game1. d4 Nf6 2. e3 g6 3. h3 d5 ... 25 moves -- nombre win: 0--nombre match: 2
+ Ruy Lopez-- nombre win: 0--nombre match: 20
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 d6 ... 33 moves -- nombre win: 0--nombre match: 2
+ French Defense-- nombre win: 0.5--nombre match: 24
+ Petrov's Defense1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 ... 15 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. e3 d5 ... 55 moves -- nombre win: 1.0--nombre match: 2
+ Owen Defense1. e4 b6 2. d4 Bb7 3. Bd3 f5 ... 7 moves -- nombre win: 0--nombre match: 2
+ Bird Opening1. f4 Nf6 2. Nf3 g6 3. e3 d5 ... 24 moves -- nombre win: 0--nombre match: 2
+ Owen Defense1. e4 b6 2. d4 Bb7 3. Bd3 c5 ... 61 moves -- nombre win: 1.0--nombre match: 2
+ Grünfeld Defense-- nombre win: 0--nombre match: 20
+d6 fxe5 2. dxe5 Nc3 3. g6 Nf3 ... 6 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 29 moves -- nombre win: 0--nombre match: 3
+ Four Knights Game-- nombre win: 0--nombre match: 18
+ Sicilian Defense-- nombre win: 0--nombre match: 47
+ Hungarian Opening1. g3 e5 2. Bg2 d5 3. b3 f5 ... 36 moves -- nombre win: 0--nombre match: 2
+ Caro-Kann Defense-- nombre win: 0--nombre match: 9
+ Duras Gambit1. e4 f5 2. exf5 Nf6 3. Nc3 d5 ... 35 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 f6 ... 38 moves -- nombre win: 0--nombre match: 2
+ Scandinavian Defense-- nombre win: 1.5--nombre match: 23
+ Center Game-- nombre win: 0--nombre match: 4
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 31 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. e3 Bg7 ... 48 moves -- nombre win: 0--nombre match: 2
+ King's Indian Defense-- nombre win: 0--nombre match: 4
+ Caro-Kann Defense1. e4 c6 2. Nf3 d5 3. exd5 cxd5 ... 36 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. e3 d5 ... 26 moves -- nombre win: 0--nombre match: 3
+ Modern Defense1. e4 g6 2. d4 c5 3. dxc5 Qa5+ ... 25 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 28 moves -- nombre win: 0--nombre match: 3
+ English Opening-- nombre win: 0.5--nombre match: 11
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. Nc3 d5 ... 53 moves -- nombre win: 0--nombre match: 2
+ King's Gambit Accepted, Muzio Gambit, Sarratt Defense1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 14 moves -- nombre win: 0--nombre match: 2
+ Grünfeld Defense1. d4 Nf6 2. c4 g6 3. Nc3 d5 ... 42 moves -- nombre win: 0--nombre match: 3
+ Philidor Defense-- nombre win: 0--nombre match: 9
+ King's Pawn Game-- nombre win: 0--nombre match: 16
+ King's Knight Opening-- nombre win: 0--nombre match: 5
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 16 moves -- nombre win: 0--nombre match: 2
+ Danish Gambit Declined, Sorensen Defense1. e4 e5 2. d4 exd4 3. c3 d5 ... 62 moves -- nombre win: 0--nombre match: 2
+ Nimzo-Larsen Attack-- nombre win: 0--nombre match: 4
+ Danish Gambit Declined, Sorensen Defense1. e4 e5 2. d4 exd4 3. c3 d5 ... 29 moves -- nombre win: 1.0--nombre match: 3
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 34 moves -- nombre win: 0--nombre match: 2
+ King's Pawn Game1. e4 e5-- nombre win: 0--nombre match: 2
+ Pirc Defense-- nombre win: 1.0--nombre match: 4
+ Philidor Defense1. e4 e5 2. Nf3 d6 3. Nc3 Nf6 ... 7 moves -- nombre win: 0--nombre match: 2
+ Ponziani Opening-- nombre win: 0--nombre match: 5
+ Nimzowitsch Defense-- nombre win: 0--nombre match: 3
+ Bishop's Opening-- nombre win: 0--nombre match: 4
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 15 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. e3 d5 ... 18 moves -- nombre win: 0--nombre match: 2
+ Queen's Pawn Game-- nombre win: 0--nombre match: 6
+ Petrov's Defense1. e4 e5 2. Nf3 Nf6 3. Nxe5 Qe7 ... 42 moves -- nombre win: 0--nombre match: 2
+ Vienna Game-- nombre win: 0--nombre match: 7
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 51 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 12 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. e3 d5 ... 28 moves -- nombre win: 0--nombre match: 2
+ Three Knights Opening1. e4 e5 2. Nf3 Nc6 3. Nc3 Bc5 ... 61 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 38 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Nc3 g6 3. e4 d5 ... 22 moves -- nombre win: 0--nombre match: 2
+ Trompowsky Attack1. d4 Nf6 2. Bg5 g6 3. c4 d5 ... 25 moves -- nombre win: 0--nombre match: 2
+ King's Pawn Opening-- nombre win: 0--nombre match: 2
+ King's Gambit Accepted, Lolli Gambit1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 21 moves -- nombre win: 0--nombre match: 2
+ Petrov's Defense1. e4 e5 2. Nf3 Nf6 3. Nxe5 b6 ... 10 moves -- nombre win: 0--nombre match: 2
+ Paleface Attack1. d4 Nf6 2. f3 g6 3. e4 d5 ... 34 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 53 moves -- nombre win: 0--nombre match: 2
+ Zukertort Opening-- nombre win: 0--nombre match: 4
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 25 moves -- nombre win: 0--nombre match: 2
+ Hungarian Opening1. g3 d5 2. Bg2 e5 3. e3 f5 ... 35 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 d6 ... 17 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 Nf6 ... 48 moves -- nombre win: 0--nombre match: 2
+ Pirc Defense1. e4 d6 2. Nf3 Nf6 3. d3 g6 ... 33 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 26 moves -- nombre win: 0--nombre match: 3
+ Owen Defense1. e4 b6 2. Nf3 Bb7 3. d3 d5 ... 36 moves -- nombre win: 0--nombre match: 2
+ London System1. d4 Nf6 2. Nf3 g6 3. Bf4 d5 ... 37 moves -- nombre win: 0--nombre match: 2
+ Van't Kruijs Opening1. e3 e5 2. Be2 d5 3. d3 c5 ... 29 moves -- nombre win: 0--nombre match: 2
+ Van't Kruijs Opening1. e3 e5 2. Qf3 d5 3. c3 Nc6 ... 41 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 48 moves -- nombre win: 1.0--nombre match: 2
+ Neo-Grünfeld Defense, with 5. Nf31. d4 Nf6 2. Nf3 g6 3. g3 d5 ... 24 moves -- nombre win: 0--nombre match: 2
+ Barnes Defense1. e4 f6 2. d4 d6 3. f4 Be6 ... 41 moves -- nombre win: 0--nombre match: 2
+ King's Gambit Accepted, King's Knight Gambit1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 34 moves -- nombre win: 0--nombre match: 2
+ Modern Defense-- nombre win: 0.5--nombre match: 11
+ King's Gambit Accepted, Lolli Gambit1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 30 moves -- nombre win: 0--nombre match: 2
+ Goldsmith Defense1. e4 h5 2. d4 d5 3. exd5 Qxd5 ... 31 moves -- nombre win: 0--nombre match: 2
+ Grünfeld Defense1. d4 Nf6 2. c4 g6 3. Nc3 d5 ... 31 moves -- nombre win: 0--nombre match: 2
+ Russian Game-- nombre win: 0--nombre match: 4
+ Danish Gambit Declined, Sorensen Defense1. e4 e5 2. d4 exd4 3. c3 d5 ... 24 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 35 moves -- nombre win: 0--nombre match: 2
+ Sicilian Defense1. e4 c5 2. Nf3 d6 3. d4 Nc6 ... 43 moves -- nombre win: 0--nombre match: 2
+ Réti Opening1. Nf3 Nf6 2. Nc3 g6 3. d4 Bg7 ... 42 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 d6 ... 24 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Nc3 g6 3. Bf4 d5 ... 43 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 Nc6 2. Nf3 e5 3. d4 exd4 ... 31 moves -- nombre win: 0--nombre match: 2
+ Réti Opening1. Nf3 Nf6 2. Nc3 g6 3. e4 Bg7 ... 27 moves -- nombre win: 0--nombre match: 2
+ Petrov's Defense1. e4 e5 2. Nf3 Nf6 3. Nxe5 Qe7 ... 45 moves -- nombre win: 0--nombre match: 2
+ Four Knights Game1. e4 e5 2. Nc3 Nf6 3. Nf3 Nc6 ... 33 moves -- nombre win: 0--nombre match: 2
+ King's Pawn Game1. e4 e5 2. g3 Nc6 3. Bg2 Nf6 ... 39 moves -- nombre win: 0--nombre match: 2
+ Petrov's Defense1. e4 e5 2. Nf3 Nf6 3. Nxe5 Qe7 ... 48 moves -- nombre win: 0--nombre match: 2
+ Van't Kruijs Opening1. e3 e5 2. f4 exf4 3. Nf3 fxe3 ... 30 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 23 moves -- nombre win: 0--nombre match: 2
+ Modern Defense1. e4 g6 2. d4 e5 3. dxe5 Bg7 ... 30 moves -- nombre win: 0--nombre match: 2
+ King's Gambit Accepted, Double Muzio Gambit1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 36 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 36 moves -- nombre win: 0--nombre match: 2
+ Indian Game-- nombre win: 0--nombre match: 6
+ Pirc Defense1. e4 d6 2. d4 c6 3. c4 Qc7 ... 38 moves -- nombre win: 0--nombre match: 2
+ Owen Defense1. e4 b6 2. d4 Bb7 3. Bd3 c6 ... 40 moves -- nombre win: 0--nombre match: 2
+ Englund Gambit Declined, Reversed French1. e3 e5 2. d4 exd4 3. exd4 d5 ... 23 moves -- nombre win: 0--nombre match: 2
+ Neo-Grünfeld Defense-- nombre win: 0--nombre match: 2
+ Caro-Kann Defense1. e4 c6 2. d4 d6 3. c4 Nd7 ... 45 moves -- nombre win: 0--nombre match: 2
+ King's Gambit Accepted, Double Muzio Gambit, Bello Gambit1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 24 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 21 moves -- nombre win: 0--nombre match: 2
+ King's Gambit Accepted, Salvio Gambit1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 49 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 49 moves -- nombre win: 0--nombre match: 3
+ Torre Attack1. d4 Nf6 2. Nf3 g6 3. Bg5 Bg7 ... 29 moves -- nombre win: 0--nombre match: 2
+ Englund Gambit Declined, Reversed French1. e3 e5 2. d4 exd4 3. exd4 d5 ... 28 moves -- nombre win: 0--nombre match: 2
+ Mieses Opening-- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Nc3 g6 3. e4 d5 ... 42 moves -- nombre win: 1.0--nombre match: 2
+ Philidor Defense1. e4 e5 2. Nf3 d6 3. d4 Bg4 ... 23 moves -- nombre win: 0--nombre match: 2
+ Réti Opening1. Nf3 Nf6 2. d3 g6 3. e4 Bg7 ... 36 moves -- nombre win: 0--nombre match: 2
+ Hungarian Opening1. g3 d5 2. Bg2 e5 3. b3 f5 ... 29 moves -- nombre win: 0--nombre match: 2
+ Van't Kruijs Opening1. e3 g6 2. e4 Bg7 3. Nf3 d6 ... 34 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. e3 d5 ... 38 moves -- nombre win: 0--nombre match: 2
+ Rat Defense-- nombre win: 0--nombre match: 3
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 40 moves -- nombre win: 0--nombre match: 2
+ Petrov's Defense1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 ... 31 moves -- nombre win: 0--nombre match: 2
+ Alekhine Defense-- nombre win: 0--nombre match: 2
+ Owen Defense1. e4 b6 2. d4 Bb7 3. Bd3 f5 ... 5 moves -- nombre win: 0--nombre match: 2
+ Caro-Kann Defense1. e4 c6 2. Nf3 d6 3. d4 Qc7 ... 29 moves -- nombre win: 0--nombre match: 2
+ Sicilian Defense1. e4 c5 2. Nf3 d6 3. d4 cxd4 ... 21 moves -- nombre win: 0--nombre match: 2
+ Englund Gambit Declined, Reversed French1. e3 e5 2. d4 exd4 3. Qxd4 Nf6 ... 33 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 b6 ... 62 moves -- nombre win: 0--nombre match: 2
+ Sicilian Defense1. e4 c5 2. Nf3 d5 3. exd5 Bg4 ... 11 moves -- nombre win: 0--nombre match: 2
+ Alekhine Defense1. e4 Nf6 2. e5 b6 3. d4 Nd5 ... 28 moves -- nombre win: 0--nombre match: 2
+ Mieses Opening1. d3 Nf6 2. f3 g6 3. g4 d5 ... 35 moves -- nombre win: 0--nombre match: 2
+ Petrov's Defense1. e4 e5 2. Nf3 Nf6 3. Nxe5 Qe7 ... 22 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. Bg3 Bg7 ... 32 moves -- nombre win: 0--nombre match: 2
+ Elephant Gambit-- nombre win: 0--nombre match: 3
+ King's Gambit Accepted, Kieseritzky Gambit, Cotter Gambit1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 29 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 Nf6 ... 18 moves -- nombre win: 0--nombre match: 2
+ Grünfeld Defense1. d4 Nf6 2. c4 g6 3. Nc3 d5 ... 44 moves -- nombre win: 0--nombre match: 2
+ Owen Defense1. e4 b6 2. d4 Bb7 3. Bd3 e6 ... 40 moves -- nombre win: 0--nombre match: 2
+ Danish Gambit Declined, Sorensen Defense1. e4 e5 2. d4 exd4 3. c3 d5 ... 39 moves -- nombre win: 0--nombre match: 2
+ Pirc Defense1. e4 d6 2. d4 Nf6 3. e5 dxe5 ... 32 moves -- nombre win: 0--nombre match: 2
+ Owen Defense1. e4 b6 2. d4 Bb7 3. Bd3 c5 ... 36 moves -- nombre win: 0--nombre match: 2
+ Pirc Defense1. e4 d6 2. d4 Nf6 3. e5 dxe5 ... 47 moves -- nombre win: 0--nombre match: 2
+ London System1. d4 Nf6 2. Bf4 g6 3. Nf3 d5 ... 26 moves -- nombre win: 0--nombre match: 2
+ Owen Defense1. e4 b6 2. d4 Bb7 3. Bd3 d6 ... 30 moves -- nombre win: 0--nombre match: 2
+ Philidor Defense1. e4 e5 2. Nf3 d6 3. d4 c5 ... 50 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 32 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Nc3 g6 3. e4 d5 ... 27 moves -- nombre win: 0--nombre match: 2
+ Grünfeld Defense1. d4 Nf6 2. c4 g6 3. Nc3 d5 ... 36 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 30 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. e3 d5 ... 32 moves -- nombre win: 0--nombre match: 2
+ King's Gambit Accepted, Kieseritzky Gambit, Kolisch Defense1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 20 moves -- nombre win: 0--nombre match: 2
+ King's Gambit Accepted, Rosentreter Gambit, Bird Gambit1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 34 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 11 moves -- nombre win: 0--nombre match: 2
+ King's Gambit Accepted, Muzio Gambit, Sarratt Defense1. e4 e5 2. f4 exf4 3. Nf3 g5 ... 28 moves -- nombre win: 0--nombre match: 2
+ Englund Gambit Declined, Reversed French1. e3 e5 2. d4 exd4 3. exd4 d5 ... 36 moves -- nombre win: 0--nombre match: 2
+ Philidor Defense1. e4 e5 2. Nf3 d6 3. d4 f6 ... 35 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. e3 Bg7 ... 20 moves -- nombre win: 0--nombre match: 2
+ Danish Gambit Declined, Sorensen Defense1. e4 e5 2. d4 exd4 3. c3 d5 ... 4 moves -- nombre win: 0--nombre match: 2
+ Owen Defense1. e4 b6 2. d4 Bb7 3. Bd3 Nf6 ... 39 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 Nf6 ... 19 moves -- nombre win: 0--nombre match: 2
+ Indian Game1. d4 Nf6 2. Bf4 g6 3. e3 d5 ... 20 moves -- nombre win: 0--nombre match: 2
+ Hungarian Opening1. g3 d5 2. Bg2 e5 3. Nf3 Nc6 ... 31 moves -- nombre win: 0--nombre match: 2
+ Alekhine Defense1. e4 Nf6 2. Nc3 g6 3. Bc4 Bg7 ... 25 moves -- nombre win: 0--nombre match: 2
+ Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 46 moves -- nombre win: 0--nombre match: 2

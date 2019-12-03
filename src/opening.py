@@ -9,19 +9,20 @@ import datetime
         #
         # j = i+26
         # link = f"https://lichess.org/@/Bialx/search?page={i}&clock.initMin=900&sort.field=d&sort.order=desc&_=15508329043{j}"
-# "https://lichess.org/@/User3546/search?page=6&clock.initMin=600&sort.field=d&sort.order=desc&_=1552756202890"
+# "https://lichess.org/@/User3546/search?page=6&clock.initMin=600&sort.field=d&sort.ordehttps://lichess.org/@/User3546/search?page={i}&clock.initMin=600&sort.field=d&sort.order=desc&_=15527562028{j}"r=desc&_=1552756202890"
 limit_date = 12
 current_date = datetime.datetime.now()
 
-#This for loop rely on the url and the "cadence" you wanna analyse, need to modify the value of j and the url if you're looking
+#This for loop rely on the url and the game timing you wanna analyse, need to modify the value of j and the url if you're looking
 #for someone else
+#https://lichess.org/@/Bialx/search?page=j&perf=2&sort.field=d&sort.order=desc&_=1575394082{j}
 def build_dict():
     dict_opening_partial = {}
     dict_opening_full = {}
     print("Processing url /*")
     for i in range(1,50):
-        j = i+84
-        link = f"https://lichess.org/@/User3546/search?page={i}&clock.initMin=600&sort.field=d&sort.order=desc&_=15527562028{j}"
+        j = i+101
+        link = f"https://lichess.org/@/Bialx/search?page={i}&perf=2&sort.field=d&sort.order=desc&_=1575394082{j}"
         dict_opening_partial, dict_opening_full, end  = add_opening(link, dict_opening_partial,  dict_opening_full)
         if end == 1:
             break
@@ -31,17 +32,18 @@ def build_dict():
 
 def add_opening(url, d_filtered, d_full):
     """ Create a dictionary with key = opening, value = (nbr_win, nbr_match) """
+
     global limit_date, current_date
     page = requests.get(url)
     soup = BeautifulSoup.BeautifulSoup(page.text, "html.parser")
-    # print(f"###### {url} ######")
+    print(f"###### {url} ######")
     tag_opening = soup.findAll('div', attrs={"class":"opening"})
     tag_win = soup.findAll('div', attrs={"class":"result"})
     tag_header = soup.findAll('div', attrs={"class":"header"})
 
     #Working with infinite scroll, end condition to check if there is nothing more to scroll
     if tag_opening == []:
-        # print("no more game")
+        print("no more game")
         return (d_filtered,d_full,1)
     else:
         for opening, win, date in zip(tag_opening, tag_win, tag_header):
@@ -49,9 +51,10 @@ def add_opening(url, d_filtered, d_full):
             tag_date = date.time
             date_game = tag_date['datetime']
             month = ((date_game.split("-")[1]).split("-")[0]).replace("0","")
-
+            win_status = 0
             #if game are too old
             if abs(int(month) - current_date.month) > limit_date:
+
                 break
             if ('class' in tag.attrs and tag['class'][0] == 'up'):
                 win_status = 1
