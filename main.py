@@ -88,7 +88,7 @@ menu_actions = {
 if __name__ == '__main__':
     # main_menu()
     opening_partial, opening_full = opening.build_dict()
-    print(f"partial = \n{opening_partial}\n###\nfull = \n{opening_full}\n")
+    #print(f"partial = \n{opening_partial}\n###\nfull = \n{opening_full}\n")
     opening.display_info_openings(opening_partial)
     opening.special_opening("Italian Game", opening_partial, opening_full)
     with open("output/opening.txt", "w") as f:

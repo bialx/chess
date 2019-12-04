@@ -2,10 +2,18 @@ from urllib.request import urlopen
 import requests
 import bs4 as BeautifulSoup
 import datetime
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-v", "--verbose", help="increase output verbosity",
+                    action="store_true")
+args = parser.parse_args()
+
 ############### Analyse games played on Lichess ###############
 
 limit_date = 6
 current_date = datetime.datetime.now()
+numbers_of_game = 0
 
 #This for loop rely on the url and the game timing you wanna analyse, need to modify the value of j and the url if you're looking
 #for someone else
@@ -18,27 +26,30 @@ def build_dict():
     for i in range(1,50):
         j = i+101
         link = f"https://lichess.org/@/Bialx/search?page={i}&perf=2&sort.field=d&sort.order=desc&_=1575394082{j}"
+        if args.verbose:
+            print(f"### {link} ###")
         dict_opening_partial, dict_opening_full, end  = add_opening(link, dict_opening_partial,  dict_opening_full)
         if end == 1:
             break
-    print("## DONE ##")
+    print(f"numbers of games analyzed : {numbers_of_game}\n## DONE ##")
+    if args.verbose:
+        print(f"partial dict = \n{dict_opening_partial}\n\n\nfull dict = \n{dict_opening_full}\n")
     return dict_opening_partial, dict_opening_full
 
 
 def add_opening(url, d_filtered, d_full):
     """ Create a dictionary with key = opening, value = (nbr_win, nbr_match) """
 
-    global limit_date, current_date
+    global limit_date, current_date, numbers_of_game
     page = requests.get(url)
     soup = BeautifulSoup.BeautifulSoup(page.text, "html.parser")
-#    print(f"###### {url} ######")
     tag_opening = soup.findAll('div', attrs={"class":"opening"})
     tag_win = soup.findAll('div', attrs={"class":"result"})
     tag_header = soup.findAll('div', attrs={"class":"header"})
 
     #Working with infinite scroll, end condition to check if there is nothing more to scroll
     if tag_opening == []:
-        print("no more game")
+        print("no more game */")
         return (d_filtered,d_full,1)
     else:
         for opening, win, date in zip(tag_opening, tag_win, tag_header):
@@ -61,6 +72,7 @@ def add_opening(url, d_filtered, d_full):
             full_text, filtered_text = parser(opening.text)
             d_filtered[filtered_text] = add(d_filtered.get(filtered_text, (win_status, 1)), (win_status, 1))
             d_full[full_text] = add(d_full.get(full_text, (win_status, 1)), (win_status, 1))
+            numbers_of_game += 1
         return (d_filtered, d_full, 0)
 
 
@@ -118,7 +130,9 @@ def special_opening(key_opening, dict_partial, dict_full):
     print(f"His worst line is {min_opening} with a winrate of {winrate_loose} over {dict_full[min_opening][1]} games")
     print(f"Do you want to display all the lines of {key_opening} ? Press Y to display")
     ch = input(">>")
-    if ch == 'Y' or ch == 'y':
+    try:
+        ch.lowercase() == 'y' or ch.lowercase() == 'yes'
         print(detailled_list)
-    else:
+    except:
+        print("bye bye")
         return
