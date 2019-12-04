@@ -4,7 +4,7 @@ import bs4 as BeautifulSoup
 import datetime
 ############### Analyse games played on Lichess ###############
 
-limit_date = 12
+limit_date = 6
 current_date = datetime.datetime.now()
 
 #This for loop rely on the url and the game timing you wanna analyse, need to modify the value of j and the url if you're looking
@@ -15,7 +15,7 @@ def build_dict():
     dict_opening_partial = {}
     dict_opening_full = {}
     print("Processing url /*")
-    for i in range(1,2):
+    for i in range(1,50):
         j = i+101
         link = f"https://lichess.org/@/Bialx/search?page={i}&perf=2&sort.field=d&sort.order=desc&_=1575394082{j}"
         dict_opening_partial, dict_opening_full, end  = add_opening(link, dict_opening_partial,  dict_opening_full)
@@ -31,13 +31,10 @@ def add_opening(url, d_filtered, d_full):
     global limit_date, current_date
     page = requests.get(url)
     soup = BeautifulSoup.BeautifulSoup(page.text, "html.parser")
-    print(f"###### {url} ######")
+#    print(f"###### {url} ######")
     tag_opening = soup.findAll('div', attrs={"class":"opening"})
-    print(f"tag opening = {tag_opening}\n")
     tag_win = soup.findAll('div', attrs={"class":"result"})
-    print(f"tag win = {tag_win}\n")
     tag_header = soup.findAll('div', attrs={"class":"header"})
-    print(f"tag header = {tag_header}\n")
 
     #Working with infinite scroll, end condition to check if there is nothing more to scroll
     if tag_opening == []:
@@ -45,13 +42,11 @@ def add_opening(url, d_filtered, d_full):
         return (d_filtered,d_full,1)
     else:
         for opening, win, date in zip(tag_opening, tag_win, tag_header):
-            print(f"\n{opening}\n {win}\n {date}\n")
             tag = win.span
             tag_date = date.time
             date_game = tag_date['datetime']
             month = ((date_game.split("-")[1]).split("-")[0]).replace("0","")
 
-            print(f"attribut win = {tag.attrs}")
             #if game are too old
             if abs(int(month) - current_date.month) > limit_date:
                 break
@@ -63,15 +58,9 @@ def add_opening(url, d_filtered, d_full):
                 win_status = 0.5
 
             #We just want the name of the core opening, neither the variation nor its classification C45 for example
-            filtered_text = ((opening.text).split(":")[0])[3:]
-            full_text = ((opening.text).split(".")[0])
-            print(f"FULL TEXT {full_text}\n")
-#            print(f"OPENING TEXT = {opening.text} // FILTERED = {test}\n")
-            # print(filtered_text, tag.attrs)
+            full_text, filtered_text = parser(opening.text)
             d_filtered[filtered_text] = add(d_filtered.get(filtered_text, (win_status, 1)), (win_status, 1))
-
-            #full opening
-            d_full[opening.text] = add(d_full.get(full_text, (win_status, 1)), (win_status, 1))
+            d_full[full_text] = add(d_full.get(full_text, (win_status, 1)), (win_status, 1))
         return (d_filtered, d_full, 0)
 
 
@@ -90,6 +79,17 @@ def occurence(l):
     for cle, valeur in compte.items():
         liste_occurence.append((cle, valeur))
     return liste_occurence
+
+
+def parser(opening):
+    if ":" not in opening:
+        opening_partial = ((opening).split("1.")[0]).strip()[3:]
+    else:
+        opening_partial = ((opening).split(":")[0]).strip()[3:]
+    opening_full = ((opening).split("1.")[0]).strip()[3:]
+    return opening_full, opening_partial
+
+
 
 def display_info_openings(dict):
     #most played opening

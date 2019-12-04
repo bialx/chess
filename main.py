@@ -88,11 +88,9 @@ menu_actions = {
 if __name__ == '__main__':
     # main_menu()
     opening_partial, opening_full = opening.build_dict()
-    print(opening_partial)
-    print("\n######\n")
-    print(opening_full)
-    #opening.display_info_openings(opening_partial)
-    #opening.special_opening("Bishop's Opening", opening_partial, opening_full)
+    print(f"partial = \n{opening_partial}\n###\nfull = \n{opening_full}\n")
+    opening.display_info_openings(opening_partial)
+    opening.special_opening("Italian Game", opening_partial, opening_full)
     with open("output/opening.txt", "w") as f:
          for key, item in opening_partial.items():
              nbr_win, nbr_match = item

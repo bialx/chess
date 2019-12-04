@@ -1,8 +1,56 @@
- Scotch Game-- nombre win: 3--nombre match: 4
- Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 exd4 ... 39 moves -- nombre win: 2--nombre match: 2
- Italian Game-- nombre win: 2--nombre match: 2
- Indian Game1. d4 Nf6 2. e3 g6 3. h3 d5 ... 25 moves -- nombre win: 0--nombre match: 2
- Ruy Lopez-- nombre win: 0--nombre match: 3
- Scotch Game1. e4 e5 2. Nf3 Nc6 3. d4 d6 ... 33 moves -- nombre win: 0--nombre match: 2
- French Defense-- nombre win: 0--nombre match: 3
- Petrov's Defense1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 ... 15 moves -- nombre win: 0--nombre match: 2
+ Scotch Game-- nombre win: 49.5--nombre match: 94
+ Italian Game-- nombre win: 14--nombre match: 33
+ Indian Game-- nombre win: 10.5--nombre match: 18
+ Ruy Lopez-- nombre win: 6.5--nombre match: 22
+ French Defense-- nombre win: 11--nombre match: 22
+ Petrov's Defense-- nombre win: 2--nombre match: 7
+ Owen Defense-- nombre win: 0.5--nombre match: 4
+ Bird Opening-- nombre win: 0--nombre match: 3
+ Grünfeld Defense-- nombre win: 3.5--nombre match: 18
+-- nombre win: 0--nombre match: 2
+ Four Knights Game-- nombre win: 9--nombre match: 18
+ Sicilian Defense-- nombre win: 22.5--nombre match: 41
+ Hungarian Opening-- nombre win: 2--nombre match: 3
+ Caro-Kann Defense-- nombre win: 7.5--nombre match: 16
+ Duras Gambit-- nombre win: 0--nombre match: 2
+ Scandinavian Defense-- nombre win: 9.5--nombre match: 15
+ Center Game-- nombre win: 1--nombre match: 3
+ King's Indian Defense-- nombre win: 4--nombre match: 4
+ Modern Defense-- nombre win: 1.5--nombre match: 5
+ English Opening-- nombre win: 6--nombre match: 9
+ King's Gambit Accepted, Muzio Gambit, Sarratt Defense-- nombre win: 2--nombre match: 4
+ Philidor Defense-- nombre win: 10--nombre match: 13
+ King's Pawn Game-- nombre win: 6--nombre match: 14
+ King's Knight Opening-- nombre win: 2--nombre match: 2
+ Danish Gambit Declined, Sorensen Defense-- nombre win: 4.5--nombre match: 6
+ Nimzo-Larsen Attack-- nombre win: 2--nombre match: 4
+ Pirc Defense-- nombre win: 3.0--nombre match: 7
+ Ponziani Opening-- nombre win: 1--nombre match: 3
+ Nimzowitsch Defense-- nombre win: 1--nombre match: 4
+ Bishop's Opening-- nombre win: 4--nombre match: 10
+ Queen's Pawn Game-- nombre win: 0.5--nombre match: 4
+ Vienna Game-- nombre win: 4--nombre match: 5
+ Three Knights Opening-- nombre win: 2--nombre match: 2
+ Trompowsky Attack-- nombre win: 2--nombre match: 2
+ King's Pawn Opening-- nombre win: 2--nombre match: 2
+ King's Gambit Accepted, Lolli Gambit-- nombre win: 0--nombre match: 3
+ Paleface Attack-- nombre win: 0--nombre match: 2
+ Zukertort Opening-- nombre win: 0--nombre match: 2
+ King's Gambit Accepted, Kieseritzky Gambit, Kolisch Defense-- nombre win: 1--nombre match: 3
+ King's Gambit Accepted, Rosentreter Gambit, Bird Gambit-- nombre win: 2--nombre match: 2
+ Russian Game-- nombre win: 2.5--nombre match: 7
+ Giuoco Piano-- nombre win: 0--nombre match: 2
+ Van't Kruijs Opening-- nombre win: 2--nombre match: 2
+ King's Gambit Accepted, Allgaier Gambit-- nombre win: 0--nombre match: 2
+ Englund Gambit Declined, Reversed French-- nombre win: 1.0--nombre match: 2
+ Lion Defense-- nombre win: 2--nombre match: 2
+ King's Gambit Accepted, Salvio Gambit-- nombre win: 0--nombre match: 2
+ Neo-Grünfeld Defense-- nombre win: 0--nombre match: 4
+ Alekhine Defense-- nombre win: 0.5--nombre match: 3
+ King's Gambit Accepted, Ghulam-Kassim Gambit-- nombre win: 2--nombre match: 2
+ Queen's Gambit Accepted-- nombre win: 1.0--nombre match: 2
+ Latvian Gambit Accepted-- nombre win: 2--nombre match: 2
+ Neo-Grünfeld Defense, with 5. Nf3-- nombre win: 2--nombre match: 2
+ London System-- nombre win: 0.5--nombre match: 3
+ Elephant Gambit-- nombre win: 2--nombre match: 2
+ Polish Opening-- nombre win: 2--nombre match: 2
