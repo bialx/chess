@@ -1,6 +1,6 @@
 import src.opening as opening
 import src.get_url as get_url
-import sys, os
+import sys, os, subprocess
 
 # Main definition - constants
 menu_actions  = {}
@@ -13,11 +13,11 @@ menu_actions  = {}
 def main_menu():
     os.system('clear')
 
-    print ("Welcome,\n")
     print ("Type to get the info you want:")
     print ("1. Analyse openings")
     print ("2. Display ranks, general information")
     print ("\n0. Quit")
+    print ("Welcome,\n")
     choice = input(" >>  ")
     exec_menu(choice)
 
@@ -39,15 +39,32 @@ def exec_menu(choice):
 
 # Menu 1
 def menu1():
-    print ("Clock timer ?\n")
-    print("1. bullet\n")
-    print("2. blitz\n")
-    print("3. rapide\n")
-    print("4. longue\n")
-    print ("9. Back")
-    print ("0. Quit")
-    choice = input(" >>  ")
-    exec_menu(choice)
+    # print ("Clock timer ?\n")
+    # print("1. bullet\n")
+    # print("2. blitz\n")
+    # print("3. rapide\n")
+    # print("4. longue\n")
+    # print ("9. Back")
+    # print ("0. Quit")
+    # choice = input(" >>  ")
+    # exec_menu(choice)
+
+    opening_partial, opening_full = opening.build_dict()
+    with open("output/opening.txt", "w") as f:
+         for key, item in opening_partial.items():
+             nbr_win, nbr_match = item
+             f.write(key + "-- nombre win: " + str(nbr_win) + "--nombre match: " + str(nbr_match))
+             f.write("\n")
+    opening.display_info_openings(opening_partial)
+    print("Display : \n1. A particular opening and its variation\n2. All the openings\n3. Go back")
+    choice = input(" >> ")
+    if choice == "1":
+        op = input(" >> ")
+        opening.special_opening(op, opening_partial, opening_full)
+    elif choice == "2":
+        subprocess.call(['cat', 'output/opening.txt'])
+    else:
+        exec_menu("9")
     return
 
 
@@ -86,13 +103,4 @@ menu_actions = {
 # =======================
 
 if __name__ == '__main__':
-    # main_menu()
-    opening_partial, opening_full = opening.build_dict()
-    #print(f"partial = \n{opening_partial}\n###\nfull = \n{opening_full}\n")
-    opening.display_info_openings(opening_partial)
-    opening.special_opening("Italian Game", opening_partial, opening_full)
-    with open("output/opening.txt", "w") as f:
-         for key, item in opening_partial.items():
-             nbr_win, nbr_match = item
-             f.write(key + "-- nombre win: " + str(nbr_win) + "--nombre match: " + str(nbr_match))
-             f.write("\n")
+    main_menu()
