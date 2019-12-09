@@ -3,23 +3,25 @@ import requests
 import bs4 as BeautifulSoup
 import datetime
 import argparse
+import src.parse as parse
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-v", "--verbose", help="increase output verbosity",
-                    action="store_true")
-args = parser.parse_args()
+# parser = argparse.ArgumentParser(description = "Chess tool to analyzed lichess's players")
+# parser.add_argument("-v", "--verbose", help="increase output verbosity",
+#                     action="store_true")
+# args = parser.parse_args()
 
 ############### Analyse games played on Lichess ###############
 
 limit_date = 6
 current_date = datetime.datetime.now()
 numbers_of_game = 0
+args = parse.make_parser()
 
 #This for loop rely on the url and the game timing you wanna analyse, need to modify the value of j and the url if you're looking
 #for someone else
 #https://lichess.org/@/Bialx/search?page=j&perf=2&sort.field=d&sort.order=desc&_=1575394082{j}
 def build_dict():
-
+    global args
     dict_opening_partial = {}
     dict_opening_full = {}
     print("Processing url /*")
