@@ -1,6 +1,6 @@
 import src.opening as opening
 import src.get_url as get_url
-
+import src.player as player
 import sys, os, subprocess
 
 # Main definition - constants
@@ -13,12 +13,11 @@ menu_actions  = {}
 # Main menu
 def main_menu():
     os.system('clear')
-
+    print ("Welcome,\n")
     print ("Type to get the info you want:")
     print ("1. Analyse openings")
     print ("2. Display ranks, general information")
     print ("\n0. Quit")
-    print ("Welcome,\n")
     choice = input(" >>  ")
     exec_menu(choice)
 
@@ -72,6 +71,11 @@ def menu1():
 # Menu 2
 def menu2():
     print ("Hello Menu 2 !\n")
+
+    player.get_player()
+
+
+
     print ("9. Back")
     print ("0. Quit")
     choice = input(" >>  ")
