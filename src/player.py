@@ -20,10 +20,12 @@ def get_player():
 
     for class_game in all_cadence:
         href = class_game.get("href")
+        cad = href.split("/")[4]
         next_link = f"https://lichess.org{href}"
         print(next_link)
         page_cadence = requests.get(next_link)
         soup2 = BeautifulSoup.BeautifulSoup(page_cadence.text, "html.parser")
-        a = soup2.findAll('div', attrs={"class":"streak"})
+        print(soup2.text)
+        a = soup2.findAll('div', attrs={"class":"game"})
         for i in a:
-            print(i)
+             print(i.h3.text)
