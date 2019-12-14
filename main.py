@@ -71,11 +71,8 @@ def menu1():
 # Menu 2
 def menu2():
     print ("Hello Menu 2 !\n")
-
-    player.get_player()
-
-
-
+    dict_game, dict_rating = player.get_player()
+    player.display_info_player(dict_game, dict_rating)
     print ("9. Back")
     print ("0. Quit")
     choice = input(" >>  ")
