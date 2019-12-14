@@ -54,7 +54,9 @@ def add_opening(url, d_opening_partial, d_opening_full):
     """ Create two dictionaries with key = opening, value = (nbr_win, nbr_match)
             partial: main line // full: main line+variation """
 
-    global limit_date, current_date, numbers_of_game
+    global args, current_date, numbers_of_game
+    if args.old:
+        limit_date = args.old
 
     #Create the Beautiful object to parse
     page = requests.get(url)
