@@ -1,7 +1,8 @@
 import argparse
 
-
 def make_parser():
+    """ Fonction to build command line arguments parser """
+
     parser = argparse.ArgumentParser(description = "Chess tool to analyzed lichess's players")
     parser.add_argument("-v", "--verbose", help="increase output verbosity",
                         action="store_true")

@@ -1,5 +1,4 @@
 import src.opening as opening
-import src.get_url as get_url
 import src.player as player
 import sys, os, subprocess
 
@@ -20,7 +19,6 @@ def main_menu():
     print ("\n0. Quit")
     choice = input(" >>  ")
     exec_menu(choice)
-
     return
 
 # Execute menu
@@ -38,39 +36,42 @@ def exec_menu(choice):
     return
 
 # Menu 1
-def menu1():
-    # print ("Clock timer ?\n")
-    # print("1. bullet\n")
-    # print("2. blitz\n")
-    # print("3. rapide\n")
-    # print("4. longue\n")
-    # print ("9. Back")
-    # print ("0. Quit")
-    # choice = input(" >>  ")
-    # exec_menu(choice)
+def menu_opening():
 
+    #Get the different opening as dict -> partial: main line // full: main line+variation
     opening_partial, opening_full = opening.build_dict()
+
+    #Write in a text file the differents opening in opening_partial
     with open("output/opening.txt", "w") as f:
          for key, item in opening_partial.items():
              nbr_win, nbr_match = item
              f.write(key + "-- nombre win: " + str(nbr_win) + "--nombre match: " + str(nbr_match))
              f.write("\n")
+
+    #Display overall information on openings
     opening.display_info_openings(opening_partial)
-    print("Display : \n1. A particular opening and its variation\n2. All the openings\n3. Go back")
+
+    print("Display : \n1. A particular opening and its variations\n2. All the openings\n3. Go back")
     choice = input(" >> ")
     if choice == "1":
-        op = input(" >> ")
+        op = input(" Opening >> ")
         opening.special_opening(op, opening_partial, opening_full)
     elif choice == "2":
         subprocess.call(['cat', 'output/opening.txt'])
     else:
+        print("Wrong input")
         exec_menu("9")
+
+    print ("9. Back")
+    print ("0. Quit")
+    choice = input(" >>  ")
+    exec_menu(choice)
     return
 
 
 # Menu 2
-def menu2():
-    print ("Hello Menu 2 !\n")
+def menu_player():
+    print ("Overall information !\n")
     dict_game, dict_rating = player.get_player()
     player.display_info_player(dict_game, dict_rating)
     print ("9. Back")
@@ -87,14 +88,16 @@ def back():
 def exit():
     sys.exit()
 
+
+
 # =======================
 #    MENUS DEFINITIONS
 # =======================
 # Menu definition
 menu_actions = {
     'main_menu': main_menu,
-    '1': menu1,
-    '2': menu2,
+    '1': menu_opening,
+    '2': menu_player,
     '9': back,
     '0': exit,
 }

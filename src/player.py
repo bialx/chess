@@ -5,11 +5,16 @@ import datetime
 from collections import defaultdict
 import src.parse as parse
 
+#Build the parser
 args = parse.make_parser()
 
 def get_player():
+    """ Return the number of games played by the player passed by command line argument and its rating according to the main clock timing as dictionnary"""
+
     number_of_games, rating = defaultdict(int), defaultdict(int)
     list_of_cadence = ["BULLET", "BLITZ", "RAPID", "CLASSICAL"]
+
+    #Get the player passed as command line argument
     global args
     player = args.player
     url = f"https://lichess.org/@/{player}"
@@ -37,8 +42,12 @@ def get_player():
 
 
 def display_info_player(dict_game, dict_rating):
+    """ Display information on a player as CADENCE : RATING : GAMES_PLAYED """
+    
+    #Get the player passed as command line argument
     global args
     player = args.player
     print(f"Information on {player}:\n")
     for cadence in dict_game:
          print(f"Rating in {cadence} is {dict_rating[cadence]} with {dict_game[cadence]} games\n")
+    return
