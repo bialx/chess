@@ -2,20 +2,30 @@
 
 Tool to analyse game played on lichess. Maleability isnt great tho, i have to change the url used in my code if i want a different player, haven't automized the process yet for openings
 
-Parameters
+CHESS ANALYZE
 ------------
 
-user : bialx (hard-coded url to get openings)
+Menu -> 1. Use hard-coded url of a player on lichess to provide stats on the differents opening played by the player. Provide:
+                -> most played opening
+                -> best/worst opening in term of win ratio
+                -> details on a given opening (win ration according to every variation played)
+            
+     -> 2. You can give a player as a command line argument to display his overall rating and games played in bullet/blitz/rapid/classical
 
-clock timer : blitz (hard code clock timer for openings)
 
-how many months to consider : 6 by default (command line option -o month or --old month)
+Parameters
+------------
 
 -v --verbose : increase verbosity
 
 -p --player: name of the player on lichess you wish to analyze (atm works to display overall information such as rating/numbers of games played)
 
 -o --old: how old are the game you wish to analyze in terms of months
+
+Hard coded parameters : for menu 1. uses "Bialx" as base player
+
+Default parameters: -o = 6 months // -p = bialx
+
 
 Provide
 ------------
