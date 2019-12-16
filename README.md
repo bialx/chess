@@ -6,11 +6,11 @@ Tool to analyse game played on lichess. The idea is to gather as much data as we
 
 Menu -> 1. Use hard-coded url of a player on lichess to provide stats on the differents opening played by the player
                
-               * most played opening
+   * most played opening
                
-               * best/worst opening in term of win ratio
+   * best/worst opening in term of win ratio
                
-               * details on a given opening (win ration according to every variation played)
+   * details on a given opening (win ration according to every variation played)
          
          
      -> 2. You can give a player as a command line argument to display his overall rating and games played
