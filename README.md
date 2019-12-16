@@ -36,7 +36,7 @@ opening/nbr_win/nbr_match in a text file -> /output/opening.txt
 ## Requirements
 
 
-You'll need to install the following modules via [pip]https://pip.pypa.io/en/stable/:
+You'll need to install the following modules via * [pip](https://pip.pypa.io/en/stable/):
 
     $ pip install beautifulsoup4
 
@@ -52,12 +52,13 @@ python main.py -p bialx -o 6
 
 ## WIP
 
-
-Automize the process of the infinite scroll to avoid having to get by hand the link of the pages we wish to work on. We currently have to analyse the requests made when we are scrolling. In fact lichess does a POST request to create different html pages as long as we are scrolling.
-
-Submit via command-line options clock-timer
-
-Data analysis on the different game/openings in order to get the most efficient opening, which lines are good/bad.  
+- [ ] Automize the process of the infinite scroll to avoid having to get by hand the link of the pages we wish to work on.
+- [ ] Submit via command-line options clock-timer for menu 1.
+- [x] Submit via command-line options player
+- [x] Submit via command-line options how old are the games we wish to analyze
+- [ ] Data analysis on the different game/openings in order to get the most efficient opening, which lines are good/bad. TO DEBUG
+- [ ] History chart 
+- [ ] use class instead of functions to provide a better library
 
 
 
