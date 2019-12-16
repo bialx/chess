@@ -6,7 +6,6 @@ MENU
 ------------
 
 Menu -> 1. Use hard-coded url of a player on lichess to provide stats on the differents opening played by the player
-      
                -> most played opening
                
                -> best/worst opening in term of win ratio
