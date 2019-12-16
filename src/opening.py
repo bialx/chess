@@ -8,7 +8,7 @@ from time import sleep
 import sys
 from threading import Thread
 import src.parse as parse
-
+import src.thread as thread
 
 
 ############### Tool to analyse games played on Lichess ###############
@@ -21,21 +21,6 @@ args = parse.make_parser() #build parser for command line arguments
 working = 0
 
 
-class Afficheur(Thread):
-    """Thread chargé simplement d'afficher une lettre dans la console."""
-
-    def __init__(self, lettre):
-        Thread.__init__(self)
-        self.lettre = lettre
-
-    def run(self):
-        """Code à exécuter pendant l'exécution du thread."""
-        global working
-        while working:
-            for frame in cycle(r'-\|/-\|/'):
-                print('*\r*', frame, sep='', end='', flush=True)
-                if working == 0: break
-                sleep(0.2)
 
 #This for loop rely on the url and the game timing you wanna analyse, need to modify the value of j and the url if you're looking for someone else
 def build_dict():
@@ -46,7 +31,7 @@ def build_dict():
     d_opening_full = {}
     print("Processing url", flush = False)
     working = 1
-    thread_1 = Afficheur("1")
+    thread_1 = thread.Spin()
     thread_1.start()
     #Loop on the differents url (infinite loop on lichess) to build our dictionaries
     for i in range(1,50):
