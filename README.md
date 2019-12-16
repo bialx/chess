@@ -14,7 +14,9 @@ Menu -> 1. Use hard-coded url of a player on lichess to provide stats on the dif
                -> details on a given opening (win ration according to every variation played)
          
          
-     -> 2. You can give a player as a command line argument to display his overall rating and games played in bullet/blitz/rapid/classical
+     -> 2. You can give a player as a command line argument to display his overall rating and games played
+           
+           in bullet/blitz/rapid/classical
 
 
 Parameters
