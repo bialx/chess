@@ -11,7 +11,6 @@ menu_actions  = {}
 
 # Main menu
 def main_menu():
-    os.system('clear')
     print ("Welcome,\n")
     print ("Type to get the info you want:")
     print ("1. Analyse openings")
@@ -103,9 +102,24 @@ menu_actions = {
 }
 
 
+
+def decorate():
+    print('''
+  (\=, \t\t\t\t\t\t   ,=/)
+ //  .\\ \t\t\t\t\t  /.  \\
+(( \_  \\ \t\t\t\t\t /  _/ ))
+ ))  `\_) \t\t\t\t\t(_/'  ((
+(/     \\ \t\t\t\t\t/    /(
+ | _.-'| \t\t CHESS ANALYZE \t\t \'-._ |
+  )___( \t\t\t\t\t  )___(
+ (=====) \t\t\t\t\t (=====)
+ }====={ \t\t\t\t\t }====={
+(_______) \t\t\t\t\t(_______)
+''', flush = False)
 # =======================
 #      MAIN PROGRAM
 # =======================
 
 if __name__ == '__main__':
+    decorate()
     main_menu()

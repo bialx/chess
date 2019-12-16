@@ -3,6 +3,10 @@ import requests
 import bs4 as BeautifulSoup
 import datetime
 import argparse
+from itertools import cycle
+from time import sleep
+import sys
+from threading import Thread
 import src.parse as parse
 
 
@@ -14,36 +18,52 @@ limit_date = 6  #how old in term of month we wish to analyze
 current_date = datetime.datetime.now()
 numbers_of_game = 0
 args = parse.make_parser() #build parser for command line arguments
+working = 0
 
 
+class Afficheur(Thread):
+    """Thread chargé simplement d'afficher une lettre dans la console."""
+
+    def __init__(self, lettre):
+        Thread.__init__(self)
+        self.lettre = lettre
+
+    def run(self):
+        """Code à exécuter pendant l'exécution du thread."""
+        global working
+        while working:
+            for frame in cycle(r'-\|/-\|/'):
+                print('*\r*', frame, sep='', end='', flush=True)
+                if working == 0: break
+                sleep(0.2)
 
 #This for loop rely on the url and the game timing you wanna analyse, need to modify the value of j and the url if you're looking for someone else
 def build_dict():
     """ Return dictionnary with the differents opening -> partial: main line // full: main line+variation"""
 
-    global args
+    global args, working
     d_opening_partial = {}
     d_opening_full = {}
-
-    print("Processing url /*")
-
+    print("Processing url", flush = False)
+    working = 1
+    thread_1 = Afficheur("1")
+    thread_1.start()
     #Loop on the differents url (infinite loop on lichess) to build our dictionaries
     for i in range(1,50):
 
         #j and link must be build manually as the process isnt automized yet: WIP
         j = i+101
         link = f"https://lichess.org/@/Bialx/search?page={i}&perf=2&sort.field=d&sort.order=desc&_=1575394082{j}"
-
         if args.verbose:
             print(f"### {link} ###")
-
         d_opening_partial, d_opening_full, end  = add_opening(link, d_opening_partial,  d_opening_full)
 
         #If we reach the end of our infinite loop or games are too old
         if end == 1:
+            working = 0
             break
 
-    print(f"numbers of games analyzed : {numbers_of_game}\n## DONE ##")
+    print(f"numbers of games analyzed : {numbers_of_game}\n## DONE ##\n\n")
     if args.verbose:
         print(f"partial dict = \n{d_opening_partial}\n\n\nfull dict = \n{d_opening_full}\n")
     return d_opening_partial, d_opening_full
@@ -56,7 +76,7 @@ def add_opening(url, d_opening_partial, d_opening_full):
 
     global args, current_date, numbers_of_game
     if args.old:
-        limit_date = args.old
+        limit_date = int(args.old)
 
     #Create the Beautiful object to parse
     page = requests.get(url)
@@ -67,7 +87,7 @@ def add_opening(url, d_opening_partial, d_opening_full):
 
     #Working with infinite scroll, end condition to check if there is nothing more to scroll
     if tag_opening == []:
-        print("no more game */")
+        print("no more game */\n")
         return (d_opening_partial, d_opening_full, 1)
     else:
         for opening, win, date in zip(tag_opening, tag_win, tag_header):
@@ -109,7 +129,6 @@ def add(xs,ys):
 
 
 
-
 def occurence(l):
     """ Function to create from a list a dictionary with the number of times the key appear in the list as a value
         Here we rather return a list instead of a dictionnary """
@@ -121,6 +140,7 @@ def occurence(l):
     for cle, valeur in compte.items():
         liste_occurence.append((cle, valeur))
     return liste_occurence
+
 
 
 def parser(opening):
@@ -148,8 +168,8 @@ def display_info_openings(dict):
 
     # WORK TO BE DONE HERE TO CHECK IF EVERYTHING IS OKAY
     max_value_games = max(v, key=lambda x: x[1]) #get the max value -> nbr_match of the among the tuples (nbr_win, nbr_match)
-    max_value_ratio = max(v, key=lambda x: x[0]/x[1] if x[1]>5 else -1)
-    min_value_ratio = min(v, key=lambda x: x[0]/x[1] if x[1]>5 else 1)
+    max_value_ratio = max(v, key=lambda x: (x[0]/x[1] and x[1] > 5)) #if x[1]>5 else -1)
+    min_value_ratio = min(v, key=lambda x: (x[0]/x[1] and x[1] > 5)) #if x[1]>5 else 1)
     opening_most_played = k[v.index(max_value_games)]
     opening_best_ratio = k[v.index(max_value_ratio)]
     opening_worst_ratio = k[v.index(min_value_ratio)]
@@ -157,8 +177,8 @@ def display_info_openings(dict):
     ratio_min = (min_value_ratio[0]/min_value_ratio[1])*100
 
     print(f"Most played opening is : {opening_most_played}\nIt was played {max_value_games[1]} times with {max_value_games[0]} games won")
-    print(f"#########\nIt's best opening is : {opening_best_ratio}\nWith a win ratio of {ratio_max}% over {max_value_ratio[1]} games")
-    print(f"#########\nIt's worst opening is : {opening_worst_ratio}\nWith a win ratio of {ratio_min}% over {min_value_ratio[1]} games\n#########")
+    print(f"\n#########\n\nIt's best opening is : {opening_best_ratio}\nWith a win ratio of {ratio_max}% over {max_value_ratio[1]} games (at least 5 games played)")
+    print(f"\n#########\n\nIt's worst opening is : {opening_worst_ratio}\nWith a win ratio of {ratio_min}% over {min_value_ratio[1]} games (at least 5 games played)\n#########\n")
     return
 
 def special_opening(key_opening, dict_partial, dict_full):
