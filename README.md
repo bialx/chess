@@ -4,12 +4,9 @@ Tool to analyse game played on lichess. The idea is to gather as much data as we
 
 ## MENU
 
-Menu -> 1. Use hard-coded url of a player on lichess to provide stats on the differents opening played by the player
-               
-   * most played opening
-               
-   * best/worst opening in term of win ratio
-               
+**Menu 1.** Uses hard-coded url of a player on lichess to provide stats on the differents opening played by the player           
+   * most played opening              
+   * best/worst opening in term of win ratio            
    * details on a given opening (win ration according to every variation played)
          
          
