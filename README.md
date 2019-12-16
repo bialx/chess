@@ -1,4 +1,4 @@
-# CHESS ANALYZE
+# CHESS ANALYZE ♘
 
 Tool to analyse game played on lichess. The idea is to gather as much data as we can on a player
 
