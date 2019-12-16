@@ -1,15 +1,15 @@
-# chess
+# CHESS ANALYZE
 
 Tool to analyse game played on lichess. Maleability isnt great tho, i have to change the url used in my code if i want a different player, haven't automized the process yet for openings
 
-CHESS ANALYZE
+MENU
 ------------
 
 Menu -> 1. Use hard-coded url of a player on lichess to provide stats on the differents opening played by the player. Provide:
-                -> most played opening
-                -> best/worst opening in term of win ratio
-                -> details on a given opening (win ration according to every variation played)
-            
+                - most played opening
+                - best/worst opening in term of win ratio
+                - details on a given opening (win ration according to every variation played)
+           
      -> 2. You can give a player as a command line argument to display his overall rating and games played in bullet/blitz/rapid/classical
 
 
