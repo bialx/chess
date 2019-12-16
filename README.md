@@ -4,28 +4,28 @@ Tool to analyse game played on lichess. The idea is to gather as much data as we
 
 ## MENU
 
-**Menu 1.** Uses hard-coded url of a player on lichess to provide stats on the differents opening played by the player           
+* **1.** Uses hard-coded url of a player on lichess to provide stats on the differents opening played by the player           
    * most played opening              
    * best/worst opening in term of win ratio            
    * details on a given opening (win ration according to every variation played)
          
          
-     -> 2. You can give a player as a command line argument to display his overall rating and games played
+* **2.** You can give a player as a command line argument to display his overall rating and games played
            
            in bullet/blitz/rapid/classical
 
 
 ## Parameters
 
--v --verbose : increase verbosity
+**-v --verbose** : increase verbosity
 
--p --player: name of the player on lichess you wish to analyze (atm works to display overall information such as rating/numbers of games played)
+**-p --player**: name of the player on lichess you wish to analyze (atm works to display overall information such as rating/numbers of games played)
 
--o --old: how old are the game you wish to analyze in terms of months
+**-o --old**: how old are the game you wish to analyze in terms of months
 
-Hard coded parameters : for menu 1. uses "Bialx" as base player
+**Hard coded parameters**: for menu 1. uses "Bialx" as base player
 
-Default parameters: -o = 6 months // -p = bialx
+**Default parameters**: -o = 6 months // -p = bialx
 
 
 ## Provide
