@@ -11,8 +11,7 @@ Tool to analyse game played on lichess. The idea is to gather as much data as we
          
          
 * **2.** You can give a player as a command line argument to display his overall rating and games played
-           
-           in bullet/blitz/rapid/classical
+         in bullet/blitz/rapid/classical
 
 
 ## Parameters
@@ -36,7 +35,7 @@ opening/nbr_win/nbr_match in a text file -> /output/opening.txt
 ## Requirements
 
 
-You'll need to install the following modules via * [pip](https://pip.pypa.io/en/stable/):
+You'll need to install the following modules via *[pip](https://pip.pypa.io/en/stable/):
 
     $ pip install beautifulsoup4
 
