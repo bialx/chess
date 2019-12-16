@@ -31,8 +31,8 @@ def build_dict():
     d_opening_full = {}
     print("Processing url", flush = False)
     working = 1
-    thread_1 = thread.Spin()
-    thread_1.start()
+    thread_spin = thread.Spin()
+    thread_spin.start()
     #Loop on the differents url (infinite loop on lichess) to build our dictionaries
     for i in range(1,50):
 
@@ -150,11 +150,11 @@ def display_info_openings(dict):
 
     k = list(dict.keys())
     v = list(dict.values())
-
+    print(v)
     # WORK TO BE DONE HERE TO CHECK IF EVERYTHING IS OKAY
     max_value_games = max(v, key=lambda x: x[1]) #get the max value -> nbr_match of the among the tuples (nbr_win, nbr_match)
-    max_value_ratio = max(v, key=lambda x: (x[0]/x[1] and x[1] > 5)) #if x[1]>5 else -1)
-    min_value_ratio = min(v, key=lambda x: (x[0]/x[1] and x[1] > 5)) #if x[1]>5 else 1)
+    max_value_ratio = max(v, key=lambda x: (x[0]/x[1])*100 and x[1] > 3) #if x[1]>5 else -1)
+    min_value_ratio = min(v, key=lambda x: (x[0]/x[1])*100 and x[1] > 3) #if x[1]>5 else 1)
     opening_most_played = k[v.index(max_value_games)]
     opening_best_ratio = k[v.index(max_value_ratio)]
     opening_worst_ratio = k[v.index(min_value_ratio)]
@@ -170,7 +170,7 @@ def special_opening(key_opening, dict_partial, dict_full):
     """ Display information on a particular opening choosed by key_opening """
 
     #build a list containing the different variations of the core opening: key_opening
-    detailled_list = [(key, value) for key,value in dict_full.items() if key_opening in key]
+    detailled_list = [(key, value) for key, value in dict_full.items() if key_opening in key]
     max_opening, max_value = max(detailled_list, key = lambda x: x[1][1])
     min_opening, min_value = min(detailled_list, key = lambda x: x[1][0])
     winrate_win = (max_value[0]/max_value[1]) * 100
