@@ -150,11 +150,11 @@ def display_info_openings(dict):
 
     k = list(dict.keys())
     v = list(dict.values())
-    print(v)
+
     # WORK TO BE DONE HERE TO CHECK IF EVERYTHING IS OKAY
     max_value_games = max(v, key=lambda x: x[1]) #get the max value -> nbr_match of the among the tuples (nbr_win, nbr_match)
-    max_value_ratio = max(v, key=lambda x: (x[0]/x[1])*100 and x[1] > 3) #if x[1]>5 else -1)
-    min_value_ratio = min(v, key=lambda x: (x[0]/x[1])*100 and x[1] > 3) #if x[1]>5 else 1)
+    max_value_ratio = max(v, key=lambda x: (x[0]/x[1])*100 and x[1] > 5) #if x[1]>5 else -1)
+    min_value_ratio = min(v, key=lambda x: (x[0]/x[1])*100 and x[1] > 5) #if x[1]>5 else 1)
     opening_most_played = k[v.index(max_value_games)]
     opening_best_ratio = k[v.index(max_value_ratio)]
     opening_worst_ratio = k[v.index(min_value_ratio)]
