@@ -59,7 +59,7 @@ def add_opening(url, d_opening_partial, d_opening_full):
     """ Create two dictionaries with key = opening, value = (nbr_win, nbr_match)
             partial: main line // full: main line+variation """
 
-    global args, current_date, numbers_of_game
+    global args, current_date, numbers_of_game, limit_date
     if args.old:
         limit_date = int(args.old)
 
@@ -95,7 +95,6 @@ def add_opening(url, d_opening_partial, d_opening_full):
 
             #We just want the name of the core opening for the parial dict, the full version for full dict, we need to parse the opening date first
             full_text, filtered_text = parser(opening.text)
-
             #We are working with tuples (nbr_win, nbr_match) so to update our dict when we encounter a knonw opening
             #we do the following get (nbr_win, nbr_match) of the opening and replace it with (nbr_win + win_status, nbr_match + 1)
             #If we dont have the opening in our dict we had for the key opening the following tuple (win_status, 1)
@@ -150,11 +149,15 @@ def display_info_openings(dict):
 
     k = list(dict.keys())
     v = list(dict.values())
+    v_filtered = [tuple for tuple in dict.values() if tuple[1] > 5]
+
 
     # WORK TO BE DONE HERE TO CHECK IF EVERYTHING IS OKAY
+    print(v)
+
     max_value_games = max(v, key=lambda x: x[1]) #get the max value -> nbr_match of the among the tuples (nbr_win, nbr_match)
-    max_value_ratio = max(v, key=lambda x: (x[0]/x[1])*100 and x[1] > 5) #if x[1]>5 else -1)
-    min_value_ratio = min(v, key=lambda x: (x[0]/x[1])*100 and x[1] > 5) #if x[1]>5 else 1)
+    max_value_ratio = max(v_filtered, key=lambda x: (x[0]/x[1])) #if x[1]>5 else -1)
+    min_value_ratio = min(v_filtered, key=lambda x: (x[0]/x[1])) #if x[1]>5 else 1)
     opening_most_played = k[v.index(max_value_games)]
     opening_best_ratio = k[v.index(max_value_ratio)]
     opening_worst_ratio = k[v.index(min_value_ratio)]
@@ -162,8 +165,8 @@ def display_info_openings(dict):
     ratio_min = (min_value_ratio[0]/min_value_ratio[1])*100
 
     print(f"Most played opening is : {opening_most_played}\nIt was played {max_value_games[1]} times with {max_value_games[0]} games won")
-    print(f"\n#########\n\nIt's best opening is : {opening_best_ratio}\nWith a win ratio of {ratio_max}% over {max_value_ratio[1]} games (at least 5 games played)")
-    print(f"\n#########\n\nIt's worst opening is : {opening_worst_ratio}\nWith a win ratio of {ratio_min}% over {min_value_ratio[1]} games (at least 5 games played)\n#########\n")
+    print(f"\n#########\n\nIt's best opening is : {opening_best_ratio}\nWith a win ratio of {ratio_max}% over {max_value_ratio[1]} games")
+    print(f"\n#########\n\nIt's worst opening is : {opening_worst_ratio}\nWith a win ratio of {ratio_min}% over {min_value_ratio[1]} games\n#########\n")
     return
 
 def special_opening(key_opening, dict_partial, dict_full):
