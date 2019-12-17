@@ -8,8 +8,8 @@ Tool to analyse game played on lichess. The idea is to gather as much data as we
    * most played opening              
    * best/worst opening in term of win ratio            
    * details on a given opening (win ration according to every variation played)
-         
-         
+
+
 * **2.** You can give a player as a command line argument to display his overall rating and games played
          in bullet/blitz/rapid/classical
 
@@ -40,9 +40,9 @@ You'll need to install the following modules via *[pip](https://pip.pypa.io/en/s
     $ pip install beautifulsoup4
 
     $ pipenv install requests
-    
-    
-## Examples 
+
+
+## Examples
 
 ```
 python main.py -p bialx -o 6
@@ -56,9 +56,9 @@ python main.py -p bialx -o 6
 - [x] Submit via command-line options player
 - [x] Submit via command-line options how old are the games we wish to analyze
 - [ ] Data analysis on the different game/openings in order to get the most efficient opening, which lines are good/bad. TO DEBUG
-- [ ] History chart 
+- [ ] History chart
 - [ ] use class instead of functions to provide a better library
-
+- [ ] create a settings.py file to initialize global variable/parser and parameters
 
 
 ## Built With
@@ -68,11 +68,8 @@ python main.py -p bialx -o 6
 
 ## Authors
 
-* **Bialx** - *Initial work* - 
+* **Bialx** - *Initial work* -
 
 ## License
 
-This project is not licensed 
-
-
-
+This project is not licensed

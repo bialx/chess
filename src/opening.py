@@ -5,7 +5,7 @@ import datetime
 import argparse
 from itertools import cycle
 from time import sleep
-import sys
+import sys, os, subprocess
 from threading import Thread
 import src.parse as parse
 import src.thread as thread
@@ -19,7 +19,7 @@ current_date = datetime.datetime.now()
 numbers_of_game = 0
 args = parse.make_parser() #build parser for command line arguments
 working = 0
-
+player = "bialx"
 
 
 #This for loop rely on the url and the game timing you wanna analyse, need to modify the value of j and the url if you're looking for someone else
@@ -48,7 +48,7 @@ def build_dict():
             working = 0
             break
 
-    print(f"numbers of games analyzed : {numbers_of_game}\n## DONE ##\n\n")
+    print(f"numbers of games analyzed : {numbers_of_game}\n## DONE ##\n\n", flush = False)
     if args.verbose:
         print(f"partial dict = \n{d_opening_partial}\n\n\nfull dict = \n{d_opening_full}\n")
     return d_opening_partial, d_opening_full
@@ -72,7 +72,7 @@ def add_opening(url, d_opening_partial, d_opening_full):
 
     #Working with infinite scroll, end condition to check if there is nothing more to scroll
     if tag_opening == []:
-        print("no more game */\n")
+        print("no more game */\n", flush = False)
         return (d_opening_partial, d_opening_full, 1)
     else:
         for opening, win, date in zip(tag_opening, tag_win, tag_header):
@@ -164,9 +164,9 @@ def display_info_openings(dict):
     ratio_max = (max_value_ratio[0]/max_value_ratio[1])*100
     ratio_min = (min_value_ratio[0]/min_value_ratio[1])*100
 
-    print(f"Most played opening is : {opening_most_played}\nIt was played {max_value_games[1]} times with {max_value_games[0]} games won")
-    print(f"\n#########\n\nIt's best opening is : {opening_best_ratio}\nWith a win ratio of {ratio_max}% over {max_value_ratio[1]} games")
-    print(f"\n#########\n\nIt's worst opening is : {opening_worst_ratio}\nWith a win ratio of {ratio_min}% over {min_value_ratio[1]} games\n#########\n")
+    print(f"Most played opening is : {opening_most_played}\nIt was played {max_value_games[1]} times with {max_value_games[0]} games won", flush = False)
+    print(f"\n#########\n\nIt's best opening is : {opening_best_ratio}\nWith a win ratio of {ratio_max}% over {max_value_ratio[1]} games", flush = False)
+    print(f"\n#########\n\nIt's worst opening is : {opening_worst_ratio}\nWith a win ratio of {ratio_min}% over {min_value_ratio[1]} games\n#########\n", flush = False)
     return
 
 def special_opening(key_opening, dict_partial, dict_full):
@@ -179,12 +179,36 @@ def special_opening(key_opening, dict_partial, dict_full):
     winrate_win = (max_value[0]/max_value[1]) * 100
     winrate_loose = (min_value[0]/min_value[1]) * 100
 
-    print(f"His main line in the opening {key_opening} is {max_opening} with a winrate of {winrate_win} over {dict_full[max_opening][1]} games")
-    print(f"His worst line is {min_opening} with a winrate of {winrate_loose} over {dict_full[min_opening][1]} games")
-    print(f"Do you want to display all the lines of {key_opening} ? Press Y to display")
+    print(f"His main line in the opening {key_opening} is {max_opening} with a winrate of {winrate_win} over {dict_full[max_opening][1]} games", flush = False)
+    print(f"His worst line is {min_opening} with a winrate of {winrate_loose} over {dict_full[min_opening][1]} games", flush = False)
+    print(f"Do you want to display all the lines of {key_opening} ? Press Y to display", flush = False)
     ch = input(" >>")
     if (ch.lower() == 'y' or ch.lower() == 'yes'):
         print(detailled_list)
     else:
-        print("bye bye")
+        print("bye bye", flush = False)
         return
+
+
+
+def opening_to_txt(dict):
+    """ Write in output/opening_{player}.txt the different openings played by the player along with win ration and number of games played"""
+
+    global player
+    if args.player:
+        player = args.player
+    with open(f"output/opening_{player}.txt", "w") as f:
+        for key, item in dict.items():
+            nbr_win, nbr_match = item
+            f.write(key + "-- nombre win: " + str(nbr_win) + "--nombre match: " + str(nbr_match))
+            f.write("\n")
+    return
+
+
+def display_all():
+    """ Display the file output/opening_{player}.txt """
+
+    global players
+    if args.player: player = args.player
+    subprocess.call(['cat', f"output/opening_{player}.txt"])
+    return

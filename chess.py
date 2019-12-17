@@ -11,11 +11,11 @@ menu_actions  = {}
 
 # Main menu
 def main_menu():
-    print ("Welcome,\n")
-    print ("Type to get the info you want:")
-    print ("1. Analyse openings")
-    print ("2. Display ranks, general information")
-    print ("\n0. Quit")
+    print ("Welcome,\n", flush = False)
+    print ("Type to get the info you want:", flush = False)
+    print ("1. Analyse openings", flush = False)
+    print ("2. Display ranks, general information", flush = False)
+    print ("\n0. Quit", flush = False)
     choice = input(" >>  ")
     exec_menu(choice)
     return
@@ -41,28 +41,24 @@ def menu_opening():
     opening_partial, opening_full = opening.build_dict()
 
     #Write in a text file the differents opening in opening_partial
-    with open("output/opening.txt", "w") as f:
-         for key, item in opening_partial.items():
-             nbr_win, nbr_match = item
-             f.write(key + "-- nombre win: " + str(nbr_win) + "--nombre match: " + str(nbr_match))
-             f.write("\n")
+    opening.opening_to_txt(opening_partial)
 
     #Display overall information on openings
     opening.display_info_openings(opening_partial)
 
-    print("Display : \n1. A particular opening and its variations\n2. All the openings\n3. Go back")
+    print("Display : \n1. A particular opening and its variations\n2. All the openings\n3. Go back", flush = False)
     choice = input(" >> ")
     if choice == "1":
         op = input(" Opening >> ")
         opening.special_opening(op, opening_partial, opening_full)
     elif choice == "2":
-        subprocess.call(['cat', 'output/opening.txt'])
+        opening.display_all()
     else:
-        print("Wrong input")
+        print("Wrong input", flush = False)
         exec_menu("9")
 
-    print ("9. Back")
-    print ("0. Quit")
+    print ("9. Back", flush = False)
+    print ("0. Quit", flush = False)
     choice = input(" >>  ")
     exec_menu(choice)
     return
@@ -70,11 +66,11 @@ def menu_opening():
 
 # Menu 2
 def menu_player():
-    print ("Overall information !\n")
+    print ("Overall information !\n", flush = False)
     dict_game, dict_rating = player.get_player()
     player.display_info_player(dict_game, dict_rating)
-    print ("9. Back")
-    print ("0. Quit")
+    print ("9. Back", flush = False)
+    print ("0. Quit", flush = False)
     choice = input(" >>  ")
     exec_menu(choice)
     return
