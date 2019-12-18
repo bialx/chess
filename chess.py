@@ -1,6 +1,8 @@
 import src.opening as opening
 import src.player as player
+import src.get_url as get_url
 import sys, os, subprocess
+from requests_xml import XMLSession
 
 # Main definition - constants
 menu_actions  = {}
@@ -117,5 +119,6 @@ def decorate():
 # =======================
 
 if __name__ == '__main__':
-    decorate()
-    main_menu()
+    # decorate()
+    # main_menu()
+    get_url.scroll()

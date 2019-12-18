@@ -46,8 +46,8 @@ def display_info_player(dict_game, dict_rating):
     """ Display information on a player as CADENCE : RATING : GAMES_PLAYED """
 
     #Get the player passed as command line argument
-    global args
-    player = args.player
+    global args, player
+    if args.player: player = args.player
     print(f"Information on {player}:\n", flush = False)
     for cadence in dict_game:
          print(f"Rating in {cadence} is {dict_rating[cadence]} with {dict_game[cadence]} games\n", flush = False)
