@@ -9,7 +9,7 @@ import sys, os, subprocess
 from threading import Thread
 import src.parse as parse
 import src.thread as thread
-
+import src.get_url as get_url
 
 ############### Tool to analyse games played on Lichess ###############
 
@@ -20,7 +20,7 @@ numbers_of_game = 0
 args = parse.make_parser() #build parser for command line arguments
 working = 0
 player = "bialx"
-
+clock = "blitz"
 
 #This for loop rely on the url and the game timing you wanna analyse, need to modify the value of j and the url if you're looking for someone else
 def build_dict():
@@ -33,20 +33,32 @@ def build_dict():
     working = 1
     thread_spin = thread.Spin()
     thread_spin.start()
-    #Loop on the differents url (infinite loop on lichess) to build our dictionaries
-    for i in range(1,50):
 
-        #j and link must be build manually as the process isnt automized yet: WIP
-        j = i+101
-        link = f"https://lichess.org/@/Bialx/search?page={i}&perf=2&sort.field=d&sort.order=desc&_=1575394082{j}"
+    #USES HARD CODED URL
+    if args.manual:
+        #Loop on the differents url (infinite loop on lichess) to build our dictionaries
+        for i in range(1,50):
+
+            #j and link must be build manually as the process isnt automized yet: WIP
+            j = i+101
+            link = f"https://lichess.org/@/Bialx/search?page={i}&perf=2&sort.field=d&sort.order=desc&_=1575394082{j}"
+            if args.verbose:
+                print(f"### {link} ###")
+            d_opening_partial, d_opening_full, end  = add_opening(link, d_opening_partial,  d_opening_full)
+
+            #If we reach the end of our infinite loop or games are too old
+            if end == 1:
+                working = 0
+                break
+
+    #USES SELENIUM
+    if not args.manual:
+        dict_settings = {'player': args.player, 'clock': args.clock}
+        link = get_url.get_url(dict_settings)
+        page_txt = get_url.scroll(link)
         if args.verbose:
             print(f"### {link} ###")
-        d_opening_partial, d_opening_full, end  = add_opening(link, d_opening_partial,  d_opening_full)
-
-        #If we reach the end of our infinite loop or games are too old
-        if end == 1:
-            working = 0
-            break
+        d_opening_partial, d_opening_full, end  = add_opening(page_txt, d_opening_partial,  d_opening_full)
 
     print(f"numbers of games analyzed : {numbers_of_game}\n## DONE ##\n\n", flush = False)
     if args.verbose:
@@ -64,8 +76,12 @@ def add_opening(url, d_opening_partial, d_opening_full):
         limit_date = int(args.old)
 
     #Create the Beautiful object to parse
-    page = requests.get(url)
-    soup = BeautifulSoup.BeautifulSoup(page.text, "html.parser")
+    if args.manual:
+        page = requests.get(url)
+        soup = BeautifulSoup.BeautifulSoup(page.text, "html.parser")
+    if not args.manual:
+        soup = BeautifulSoup.BeautifulSoup(url, "html.parser")
+
     tag_opening = soup.findAll('div', attrs={"class":"opening"})        #used to handle the opening
     tag_win = soup.findAll('div', attrs={"class":"result"})             #used to handle win, loose or draw
     tag_header = soup.findAll('div', attrs={"class":"header"})          #used to handle the date
@@ -194,10 +210,12 @@ def special_opening(key_opening, dict_partial, dict_full):
 def opening_to_txt(dict):
     """ Write in output/opening_{player}.txt the different openings played by the player along with win ration and number of games played"""
 
-    global player
+    global player, clock
     if args.player:
         player = args.player
-    with open(f"output/opening_{player}.txt", "w") as f:
+    if args.clock:
+        clock = args.clock
+    with open(f"output/opening_{player}_{clock}.txt", "w") as f:
         for key, item in dict.items():
             nbr_win, nbr_match = item
             f.write(key + "-- nombre win: " + str(nbr_win) + "--nombre match: " + str(nbr_match))
@@ -208,7 +226,8 @@ def opening_to_txt(dict):
 def display_all():
     """ Display the file output/opening_{player}.txt """
 
-    global players
+    global player, clock
     if args.player: player = args.player
-    subprocess.call(['cat', f"output/opening_{player}.txt"])
+    if args.clock: clock = args.clock
+    subprocess.call(['cat', f"output/opening_{player}_{clock}.txt"])
     return

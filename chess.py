@@ -38,7 +38,7 @@ def exec_menu(choice):
 # Menu 1
 def menu_opening():
 
-    
+
     #Get the different opening as dict -> partial: main line // full: main line+variation
     opening_partial, opening_full = opening.build_dict()
 
@@ -119,8 +119,8 @@ def decorate():
 # =======================
 
 if __name__ == '__main__':
-    # decorate()
-    # main_menu()
-    dict_settings = {'clock': 'blitz', 'player': 'bialx'}
-    base_url = get_url.get_url(dict_settings)
-    get_url.scroll(base_url)
+    decorate()
+    main_menu()
+    # dict_settings = {'clock': 'blitz', 'player': 'bialx'}
+    # base_url = get_url.get_url(dict_settings)
+    # get_url.scroll(base_url)
