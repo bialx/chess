@@ -2,7 +2,6 @@ import src.opening as opening
 import src.player as player
 import src.get_url as get_url
 import sys, os, subprocess
-from requests_xml import XMLSession
 
 # Main definition - constants
 menu_actions  = {}
@@ -39,6 +38,7 @@ def exec_menu(choice):
 # Menu 1
 def menu_opening():
 
+    
     #Get the different opening as dict -> partial: main line // full: main line+variation
     opening_partial, opening_full = opening.build_dict()
 
@@ -121,4 +121,6 @@ def decorate():
 if __name__ == '__main__':
     # decorate()
     # main_menu()
-    get_url.scroll()
+    dict_settings = {'clock': 'blitz', 'player': 'bialx'}
+    base_url = get_url.get_url(dict_settings)
+    get_url.scroll(base_url)

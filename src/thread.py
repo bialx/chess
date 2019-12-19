@@ -3,6 +3,7 @@ from time import sleep
 import sys
 from threading import Thread
 import src.opening as opening
+import src.get_url as get_url
 
 class Spin(Thread):
     """Thread to print a spinning wheel on stdout while a task is ongoing"""
@@ -12,8 +13,8 @@ class Spin(Thread):
 
     def run(self):
         """Display the spinning wheel when the thread is running"""
-        while opening.working:
+        while opening.working or get_url.working:
             for frame in cycle(r'-\|/-\|/'):
                 print('*\r*', frame, sep='', end='', flush=True)
-                if opening.working == 0: break
+                if get_url.working == 0 and opening.working == 0: break
                 sleep(0.2)
