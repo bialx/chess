@@ -27,7 +27,7 @@ We have to different ways to scrap data. Either automatic with selenium or using
 
 **-m**: enable manual hard-coded url, otherwise uses selenium (can provide player and clock timing with -p and -c)
 
-**-c**: clock timing you'd like to analyze amoung bullet, blitz, rapid, classical
+**-c**: clock timing you'd like to analyze amoung bullet, blitz, rapid, classical, all
 
 **Default parameters**: -o 6 months // -p = bialx // -c blitz
 
