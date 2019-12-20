@@ -16,7 +16,7 @@ Tool to analyse game played on lichess. The idea is to gather as much data as we
 
 ## Parameters
 
-We have to different ways to scrap data. Either automatic with selenium or uses hard coded url (need to get it by analyzing the request made by lichess when scrolling the infinite scroll). The selenium option is slower and gather less data. 
+We have to different ways to scrap data. Either automatic with selenium or using hard coded url (need to get it by analyzing the request made by lichess when scrolling the infinite scroll). The selenium option is slower and gather less data. 
 
 
 **-v --verbose** : increase verbosity
